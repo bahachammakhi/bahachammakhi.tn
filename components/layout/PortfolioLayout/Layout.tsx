@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import { useDidMount } from "../../../hooks/useLifeCycle";
+import ResponsiveHeader from "../ResponsiveHeader/ResponsiveHeader";
 
 interface Props {
   children: any;
@@ -9,6 +10,7 @@ interface Props {
 
 const Layout = ({ children }: Props) => {
   const [state, setState] = useState(1800);
+
   // const resize = () => {
   //   if (window.innerWidth < 700) {
   //     setState(600);
@@ -17,15 +19,15 @@ const Layout = ({ children }: Props) => {
   //   }
   // };
   // window.addEventListener("resize", resize);
-  // useDidMount(() => {
-  //   if (window.innerWidth < 700) {
-  //     setState(600);
-  //   }
-  // });
+  useDidMount(() => {
+    if (window.innerWidth < 700) {
+      setState(600);
+    }
+  });
   return (
     <>
       <div className="header">
-        <Header />
+        {state < 700 ? <ResponsiveHeader /> : <Header />}
       </div>
       <div className="body">{children}</div>
       <div className="footer">
