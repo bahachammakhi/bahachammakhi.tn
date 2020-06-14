@@ -80,20 +80,20 @@ const ContactForm = ({
           // value={values.message}
         />
       </div>
-      <div
+      {/* <div
         onClick={() => {
           handleClick();
         }}
         className="button-contact-form"
-      >
-        <ButtonMine
-          content="Send"
-          width="120px"
-          height="50px"
-          path={"baha"}
-          executed={true}
-        />
-      </div>
+      > */}
+      <ButtonMine
+        content="Send"
+        width="120px"
+        height="50px"
+        path={"baha"}
+        executed={true}
+      />
+      {/* </div> */}
       <style jsx>
         {`
           .input-contact-form {

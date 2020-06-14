@@ -31,9 +31,9 @@ const Button = ({ path, content, width, height, executed }: Props) => {
   return (
     <div>
       {executed ? (
-        <Content style={{ width: width, height: height }}>
+        <ButtonWrapper style={{ width: width, height: height }}>
           <Content>{content}</Content>
-        </Content>
+        </ButtonWrapper>
       ) : (
         <Link
           href={path}
