@@ -4,11 +4,9 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { Wrapper, NavItem } from "./styles";
 import Button from "../../ui/Button/Button";
-
-const SideNav = ({ navitems, matche, setOpen }: any) => {
-  const router = useRouter();
-  const navlinks = navitems.map((item: String) => {
-    let path =
+const navlinks = (navitems, router) =>
+  navitems.map((item: String) => {
+    const path =
       item === "Home" ? "/" : item.charAt(0).toLowerCase() + item.substring(1);
     return router.pathname === `/${path}` ||
       (router.pathname === "/" && item === "Home") ? (
@@ -33,6 +31,9 @@ const SideNav = ({ navitems, matche, setOpen }: any) => {
       </NavItem>
     );
   });
+
+const SideNav = ({ navitems, matche, setOpen }: any) => {
+  const router = useRouter();
   return (
     <Wrapper>
       <CloseOutlined
@@ -41,7 +42,7 @@ const SideNav = ({ navitems, matche, setOpen }: any) => {
           setOpen(false);
         }}
       />
-      {navlinks}
+      {navlinks(navitems, router)}
 
       <div>
         <hr />

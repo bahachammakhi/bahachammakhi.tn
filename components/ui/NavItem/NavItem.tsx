@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
 
 interface Props {
@@ -8,16 +8,16 @@ interface Props {
 }
 
 const NavItem = ({ path, content, activated }: Props) => {
-  var color = "black";
-
-  if (activated == true) {
-    color = "black";
-  } else {
-    color = "gray";
-  }
   return (
     <Link href={path}>
-      <p style={{ textDecoration: "none", color: color, marginLeft: "60px" }}>
+      <p
+        style={{
+          textDecoration: "none",
+          color: activated ? "black" : "gray",
+          marginLeft: "60px",
+          cursor: "pointer",
+        }}
+      >
         {content}
       </p>
     </Link>
