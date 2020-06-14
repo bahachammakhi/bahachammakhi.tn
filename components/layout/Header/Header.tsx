@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import classes from "./css/header.module.scss";
+import { useRouter } from "next/router";
 // import logo from "./../../img/logo.svg";
 //Components
 import NavItem from "../../ui/NavItem/NavItem";
@@ -8,37 +8,39 @@ import Button from "../../ui/Button/Button";
 
 const Header = ({ match }: any) => {
   const [state, changestate] = useState(true);
-  // console.log(match);
-  let home = false;
-  let work = false;
-  let contact = false;
-  if (match.path === "/") {
-    home = true;
-    work = false;
-    contact = false;
-  } else if (match.path === "/work") {
-    home = false;
-    work = true;
-    contact = false;
-  } else if (match.path === "/contact") {
-    home = false;
-    work = false;
-    contact = true;
-  }
-  let display = "none";
-  if (state === true) {
-    display = "none";
-  } else {
-    display = "";
-  }
+  const router = useRouter();
+  console.log(router);
+  /** *Todo needs some work here ! */
+  // let home = false;
+  // let work = false;
+  // let contact = false;
+  // if (match.path === "/") {
+  //   home = true;
+  //   work = false;
+  //   contact = false;
+  // } else if (match.path === "/work") {
+  //   home = false;
+  //   work = true;
+  //   contact = false;
+  // } else if (match.path === "/contact") {
+  //   home = false;
+  //   work = false;
+  //   contact = true;
+  // }
+  // let display = "none";
+  // if (state === true) {
+  //   display = "none";
+  // } else {
+  //   display = "";
+  // }
   return (
     <div>
       <div className="wrapper">
         <div className="logo">Baha chammakhi</div>
         <div className="navigation">
-          <NavItem content="Home" path={"/"} activated={home} />
+          <NavItem content="Home" path={"/"} activated={true} />
           {/* <NavItem content="Work" path={"/work"} activated={work} /> */}
-          <NavItem content="Contact me" path={"/contact"} activated={contact} />
+          <NavItem content="Contact me" path={"/contact"} activated={false} />
         </div>
         <div className="button">
           <Button

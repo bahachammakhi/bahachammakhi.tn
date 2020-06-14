@@ -7,10 +7,10 @@ const imgs = [
 const icons = imgs.map((img) => {
   let width = "50px";
   let heigth = "50px";
-  if (window.innerWidth < 768) {
-    width = "50px";
-    heigth = "50px";
-  }
+  // if (window.innerWidth < 768) {
+  //   width = "50px";
+  //   heigth = "50px";
+  // }
   return (
     <div className="img">
       <img
@@ -121,3 +121,5 @@ const Footer = () => {
     </div>
   );
 };
+
+export default Footer;
