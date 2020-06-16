@@ -5,43 +5,30 @@ import { useRouter } from "next/router";
 import NavItem from "../../ui/NavItem/NavItem";
 import Button from "../../ui/Button/Button";
 // import Logo from "./Logo";
-
+const Links = [
+  { name: "Home", pathname: "/" },
+  { name: "Contact", pathname: "/contact" },
+];
+const NavItems = (pathname) => {
+  return Links.map((element) => {
+    return (
+      <NavItem
+        content={element.name}
+        path={element.pathname}
+        activated={element.pathname === pathname}
+      />
+    );
+  });
+};
 const Header = ({ match }: any) => {
   const [state, changestate] = useState(true);
   const router = useRouter();
   console.log(router);
-  /** *Todo needs some work here ! */
-  // let home = false;
-  // let work = false;
-  // let contact = false;
-  // if (match.path === "/") {
-  //   home = true;
-  //   work = false;
-  //   contact = false;
-  // } else if (match.path === "/work") {
-  //   home = false;
-  //   work = true;
-  //   contact = false;
-  // } else if (match.path === "/contact") {
-  //   home = false;
-  //   work = false;
-  //   contact = true;
-  // }
-  // let display = "none";
-  // if (state === true) {
-  //   display = "none";
-  // } else {
-  //   display = "";
-  // }
   return (
-    <div>
+    <>
       <div className="wrapper">
         <div className="logo">Baha chammakhi</div>
-        <div className="navigation">
-          <NavItem content="Home" path={"/"} activated={true} />
-          {/* <NavItem content="Work" path={"/work"} activated={work} /> */}
-          <NavItem content="Contact me" path={"/contact"} activated={false} />
-        </div>
+        <div className="navigation">{NavItems(router.pathname)}</div>
         <div className="button">
           <Button
             path="/contact"
@@ -139,7 +126,7 @@ const Header = ({ match }: any) => {
           }
         }
       `}</style>
-    </div>
+    </>
   );
 };
 export default Header;

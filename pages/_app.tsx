@@ -1,7 +1,9 @@
-import React from "react";
+import React, { createContext } from "react";
 import "antd/dist/antd.css";
 import { DefaultSeo } from "next-seo";
-
+export const Redux = createContext({
+  name: process.env.author,
+});
 const DEFAULT_SEO = {
   title: "Baha Chammakhi",
   description: "My portfolio ",
@@ -22,10 +24,10 @@ const DEFAULT_SEO = {
     cardType: "summary_large_image",
   },
 };
-
+//https://strapi.io/blog/build-a-blog-with-next-react-js-strapi-and-apollo
 const MyApp = ({ Component, pageProps }: any): any => {
   return (
-    <>
+    <Redux.Provider value={{ name: process.env.NAME }}>
       <DefaultSeo {...DEFAULT_SEO} /> <Component {...pageProps} />{" "}
       <style global jsx>
         {`
@@ -41,7 +43,7 @@ const MyApp = ({ Component, pageProps }: any): any => {
           }
         `}
       </style>
-    </>
+    </Redux.Provider>
   );
 };
 export default MyApp;

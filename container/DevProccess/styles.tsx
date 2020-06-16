@@ -64,16 +64,19 @@ export const Content = styled.div`
 export const ContentText = styled.p`
   animation: ${mymove} 1s ease-in;
 `;
-
-export const Button = styled.div`
-  background-color: #2a878f;
+export const ButtonWrapper = styled.div`
+  display: flex;
   position: absolute;
   right: 10px;
   bottom: 10px;
+`;
+export const Button = styled.div`
+  background-color: #2a878f;
   border-radius: 8px;
   width: ${(props: any) => (props?.width ? props.width : "60px")};
   height: 30px;
   padding: 6px;
+  margin-left: 6px;
   transition: 0.3s;
   color: white;
   cursor: pointer;

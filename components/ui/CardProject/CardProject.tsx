@@ -23,96 +23,96 @@ const technologies = ["CSS", "JS", "Typescript", "React", "Nodejs"];
 interface Props {
   data?: any;
 }
-const CardProject = ({ data }: Props) => {
-  let data1: any = {};
-  if (data) {
-    data1 = data;
-  }
-  const [change, handleChange] = useState(false);
-  const TechnologiesCard = technologies.map((el) => (
-    <LittleCard>{el}</LittleCard>
-  ));
-  const CardFront = () => {
-    return (
-      <CardWrapper>
-        <CardContent>
-          <CardTextTitle>{data1.name}</CardTextTitle>
-          <CardTextParag>{data1.details}</CardTextParag>
-        </CardContent>
-        <CardContent>
-          <Row>
-            <Square>{data1.date}</Square>
-            <Circle onClick={() => handleChange(true)}>
-              <NextArrow />
-              <NextArrow style={{ top: "-12px", right: "-15px" }} />
-            </Circle>
-          </Row>
 
-          <img
-            src={data1.img}
-            style={{
-              position: "relative",
-              zIndex: 0,
-              top: "-25px",
-              width: "150px",
-            }}
-          />
-        </CardContent>
-      </CardWrapper>
-    );
-  };
+const TechnologiesCard = technologies.map((el) => (
+  <LittleCard>{el}</LittleCard>
+));
 
-  const CardBack = () => {
-    return (
-      <CardWrapper>
-        <CardContent>
-          <Circle onClick={() => handleChange(false)} direction>
-            <NextArrow direction="right" style={{ top: "8px" }} />
-            <NextArrow
-              direction="right"
-              style={{ top: "-12px", left: "16px" }}
-            />
+const CardFront = ({ data, handleChange }: any) => {
+  return (
+    <CardWrapper>
+      <CardContent>
+        <CardTextTitle>{data?.name}</CardTextTitle>
+        <CardTextParag>{data?.details}</CardTextParag>
+      </CardContent>
+      <CardContent>
+        <Row>
+          <Square>{data?.date}</Square>
+          <Circle onClick={() => handleChange(true)}>
+            <NextArrow />
+            <NextArrow style={{ top: "-12px", right: "-15px" }} />
           </Circle>
+        </Row>
 
-          <RowModi>
-            <Image src={data1.path} alt="img" />
-            <Column>
-              {data1.github ? (
-                <IconLink
-                  onClick={() => {
-                    window.open(data1.github);
-                  }}
-                  alt="github"
-                  src={"https://image.flaticon.com/icons/svg/25/25231.svg"}
-                />
-              ) : (
-                <div />
-              )}
-              {data1.link ? (
-                <IconLink
-                  onClick={() => {
-                    window.open(data1.link);
-                  }}
-                  alt="link"
-                  src={
-                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH1JYtAzNaHYOw6fbIzAXOMjTRo7y4RDCbA4FdfRCG8jJ75Gb74g&s"
-                  }
-                />
-              ) : (
-                <div />
-              )}
-            </Column>
-          </RowModi>
-        </CardContent>
+        <img
+          src={data?.img}
+          style={{
+            position: "relative",
+            zIndex: 0,
+            top: "-25px",
+            width: "150px",
+          }}
+          alt="Project"
+        />
+      </CardContent>
+    </CardWrapper>
+  );
+};
 
-        <Rectangle>{TechnologiesCard}</Rectangle>
-      </CardWrapper>
-    );
-  };
+const CardBack = ({ data, handleChange }: any) => {
+  return (
+    <CardWrapper>
+      <CardContent>
+        <Circle onClick={() => handleChange(false)} direction>
+          <NextArrow direction="right" style={{ top: "8px" }} />
+          <NextArrow direction="right" style={{ top: "-12px", left: "16px" }} />
+        </Circle>
+
+        <RowModi>
+          <Image src={data?.path} alt="img" />
+          <Column>
+            {data?.github ? (
+              <IconLink
+                onClick={() => {
+                  window.open(data?.github);
+                }}
+                alt="github"
+                src={"https://image.flaticon.com/icons/svg/25/25231.svg"}
+              />
+            ) : (
+              <div />
+            )}
+            {data?.link ? (
+              <IconLink
+                onClick={() => {
+                  window.open(data?.link);
+                }}
+                alt="link"
+                src={
+                  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH1JYtAzNaHYOw6fbIzAXOMjTRo7y4RDCbA4FdfRCG8jJ75Gb74g&s"
+                }
+              />
+            ) : (
+              <div />
+            )}
+          </Column>
+        </RowModi>
+      </CardContent>
+
+      <Rectangle>{TechnologiesCard}</Rectangle>
+    </CardWrapper>
+  );
+};
+const CardProject = ({ data }: Props) => {
+  const [change, handleChange] = useState(false);
 
   return (
     <div style={{ padding: "20px", paddingLeft: "0px" }}>
-      {change ? <CardBack /> : <CardFront />}
+      {change ? (
+        <CardBack data={data} handleChange={handleChange} />
+      ) : (
+        <CardFront data={data} handleChange={handleChange} />
+      )}
     </div>
   );
 };

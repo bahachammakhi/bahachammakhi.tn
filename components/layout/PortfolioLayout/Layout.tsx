@@ -7,7 +7,6 @@ import ResponsiveHeader from "../ResponsiveHeader/ResponsiveHeader";
 interface Props {
   children: any;
 }
-
 const Layout = ({ children }: Props) => {
   const [state, setState] = useState(1800);
 
