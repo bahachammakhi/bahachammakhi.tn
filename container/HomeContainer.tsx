@@ -112,6 +112,7 @@ const HomeContainer: React.FC = ({ match, getAllPortfolios }: any) => {
   const [bo, changebo] = useState(false);
   const [state, setState] = useState("Lets build your next ");
   const [state1, setState1] = useState("big idea");
+
   let width = "180px";
 
   // useDidMount(() => {
@@ -184,8 +185,8 @@ const HomeContainer: React.FC = ({ match, getAllPortfolios }: any) => {
         <DevProccess />
       </div>
       <div id="projects" style={{ display: "flex", flexWrap: "wrap" }}>
-        {projects.map((el) => (
-          <div data-aos="fade-left">
+        {projects.map((el, index) => (
+          <div key={index} data-aos="fade-left">
             <CardProject data={el} />
           </div>
         ))}

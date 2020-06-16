@@ -12,7 +12,7 @@ const imgs = [reacticon, firebaseicon, rn, redux, js, mongodb];
 const Technologies = () => {
   return (
     <RowEdited>
-      <p>
+      <div>
         Specialized in JavaScript with over a year of experience in building the
         web and working with technologies like
         <TextLoop springConfig={{ stiffness: 180, damping: 8 }}>
@@ -39,7 +39,7 @@ const Technologies = () => {
             <Title>Nodejs</Title>
           </Row>
         </TextLoop>
-      </p>
+      </div>
       {/* <style jsx>
         {`
           .colmun {

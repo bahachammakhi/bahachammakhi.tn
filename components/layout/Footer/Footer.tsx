@@ -4,15 +4,9 @@ import Button from "../../ui/Button/Button";
 const imgs = [
   "https://cdn.iconscout.com/icon/free/png-256/github-153-675523.png",
 ];
-const icons = imgs.map((img) => {
-  let width = "50px";
-  let heigth = "50px";
-  // if (window.innerWidth < 768) {
-  //   width = "50px";
-  //   heigth = "50px";
-  // }
+const icons = imgs.map((img, key) => {
   return (
-    <div className="img">
+    <div key={key} className="img">
       <img
         onClick={() => {
           window.open("https://github.com/bahachammakhi");

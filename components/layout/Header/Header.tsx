@@ -10,12 +10,13 @@ const Links = [
   { name: "Contact", pathname: "/contact" },
 ];
 const NavItems = (pathname) => {
-  return Links.map((element) => {
+  return Links.map((element, index) => {
     return (
       <NavItem
         content={element.name}
         path={element.pathname}
         activated={element.pathname === pathname}
+        key={index}
       />
     );
   });

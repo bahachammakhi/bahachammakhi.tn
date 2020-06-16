@@ -35,7 +35,7 @@ const StepsContainer = (current) => {
   return data.map((element, index) => {
     const number = element.step + 1;
     return (
-      <>
+      <div key={index}>
         <StepsCircle
           activated={current === element.step}
           done={current > element.step}
@@ -51,7 +51,7 @@ const StepsContainer = (current) => {
         ) : (
           <></>
         )}
-      </>
+      </div>
     );
   });
 };
@@ -73,8 +73,8 @@ const DevProccess = () => {
     <>
       <Steps>{StepsContainer(current)}</Steps>
       <Content>
-        {data.slice(current, current + 1).map((el) => {
-          return <ContentText>{el.content}</ContentText>;
+        {data.slice(current, current + 1).map((el, index) => {
+          return <ContentText key={index}>{el.content}</ContentText>;
         })}
         /** Needs some fixes here ! */
         <ButtonWrapper>

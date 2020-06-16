@@ -15,7 +15,7 @@ const Services = () => {
       classname = "cardLeft";
     }
     return (
-      <div data-aos={animation} className={classname}>
+      <div key={n} data-aos={animation} className={classname}>
         <ServiceCard title={el.title} description={el.description} />
       </div>
     );
