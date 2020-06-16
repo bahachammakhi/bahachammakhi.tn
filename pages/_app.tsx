@@ -6,7 +6,13 @@ import { getPeople } from "../requests/requests";
 import { DefaultSeo } from "next-seo";
 export const Redux = createContext({
   name: process.env.author,
-  calls: { getPeople: { call: () => {} } },
+  calls: {
+    getPeople: {
+      call: () => {
+        return {};
+      },
+    },
+  },
 });
 //getPeople
 const DEFAULT_SEO = {
@@ -30,10 +36,22 @@ const DEFAULT_SEO = {
   },
 };
 //https://strapi.io/blog/build-a-blog-with-next-react-js-strapi-and-apollo
+function setGoogleTags() {
+  return {
+    __html: `
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-XXXXXXXX-X');
+    `,
+  };
+}
 const MyApp = ({ Component, pageProps }: any): any => {
   const { ...calls } = useApi({ getPeople });
   return (
-    <Redux.Provider value={{ name: process.env.NAME, calls: calls }}>
+    /** Do this after !!!!!!!!!!!!!!!!!!!!!!!! */
+    // <Redux.Provider value={{ name: process.env.NAME, calls: calls }}>
+    <>
       <Head>
         <meta name="application-name" content="PWA App" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -101,6 +119,12 @@ const MyApp = ({ Component, pageProps }: any): any => {
           property="og:image"
           content="https://yourdomain.com/static/icons/apple-touch-icon.png"
         />
+
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=UA-139163951-3"
+        ></script>
+        <script dangerouslySetInnerHTML={setGoogleTags()} />
       </Head>
       <DefaultSeo {...DEFAULT_SEO} /> <Component {...pageProps} />{" "}
       <style global jsx>
@@ -117,7 +141,8 @@ const MyApp = ({ Component, pageProps }: any): any => {
           }
         `}
       </style>
-    </Redux.Provider>
+      {/* </Redux.Provider>*/}
+    </>
   );
 };
 export default MyApp;
