@@ -1,6 +1,6 @@
 import axios, { AxiosResponse } from "axios";
 
-const BaseURL = "TEST";
+const BaseURL = process.env.BASE_URL;
 
 export let authorizationBearer: string | null = null;
 

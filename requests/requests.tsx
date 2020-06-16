@@ -6,3 +6,5 @@ import {
   Response,
   axiosPut,
 } from "./http";
+
+export const getPeople = (): Promise<Response<any>> => axiosGet("/people");
