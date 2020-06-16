@@ -20,7 +20,7 @@ const ContactForm = ({
       values.fullname !== "" &&
       values.message !== ""
     ) {
-      CreateNewContact.call(values);
+      // CreateNewContact.call(values);
       clearValues();
     } else {
       notification.error({

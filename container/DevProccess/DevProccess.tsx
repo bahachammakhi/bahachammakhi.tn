@@ -1,6 +1,13 @@
 import React, { useState } from "react";
 import StepsCircle from "../../components/ui/StepsCircle/StepsCircle";
-import { Steps, Line, Content, ContentText, Button } from "./styles";
+import {
+  Steps,
+  Line,
+  Content,
+  ContentText,
+  Button,
+  ButtonWrapper,
+} from "./styles";
 // import contentLoading from "../hoc/contentLoading";
 
 const data = [
@@ -24,20 +31,26 @@ const data = [
 ];
 
 const StepsContainer = (current) => {
-  return data.map((element) => {
+  const length = data.length - 1;
+  return data.map((element, index) => {
+    const number = element.step + 1;
     return (
       <>
         <StepsCircle
           activated={current === element.step}
           done={current > element.step}
-          number={element.step.toString()}
+          number={number.toString()}
           step={element.title}
         />
-        <Line
-          style={{
-            backgroundColor: current > element.step ? "#2A878F" : "gray",
-          }}
-        />
+        {index < length ? (
+          <Line
+            style={{
+              backgroundColor: current > element.step ? "#2A878F" : "gray",
+            }}
+          />
+        ) : (
+          <></>
+        )}
       </>
     );
   });
@@ -64,19 +77,21 @@ const DevProccess = () => {
           return <ContentText>{el.content}</ContentText>;
         })}
         /** Needs some fixes here ! */
-        <Button
-          style={{ display: current < 2 ? "" : "none" }}
-          onClick={() => nextStep()}
-        >
-          Next
-        </Button>
-        <Button
-          width="80px"
-          style={{ display: current > 0 ? "" : "none" }}
-          onClick={() => previousStep()}
-        >
-          Previous
-        </Button>
+        <ButtonWrapper>
+          <Button
+            width="80px"
+            style={{ display: current > 0 ? "" : "none" }}
+            onClick={() => previousStep()}
+          >
+            Previous
+          </Button>
+          <Button
+            style={{ display: current < 2 ? "" : "none" }}
+            onClick={() => nextStep()}
+          >
+            Next
+          </Button>
+        </ButtonWrapper>
       </Content>
     </>
   );

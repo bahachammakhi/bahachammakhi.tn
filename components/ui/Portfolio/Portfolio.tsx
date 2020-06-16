@@ -34,46 +34,6 @@ const Portfolio = ({ color, title, details, description, src }: Iprops) => {
           executed={false}
         />
       </ButtonWrapper>
-      {/* <style jsx>
-        {`
-          .card {
-            padding-left: 20%;
-            padding-top: 10%;
-            padding-bottom: 2%;
-          }
-          .wrapper {
-            max-height: 1000px;
-          }
-          .button {
-            padding-left: 45%;
-            padding-bottom: 10%;
-          }
-          .title {
-            text-align: center;
-            font-weight: bolder;
-          }
-          .details {
-            text-align: center;
-          }
-          .description {
-            text-align: center;
-          }
-          @media only screen and (max-width: 767px) {
-            .card {
-              padding-left: 10%;
-              padding-top: 10%;
-              padding-bottom: 2%;
-            }
-            .button {
-              padding-left: 30%;
-              padding-bottom: 10%;
-            }
-            .title {
-              margin-top: 10%;
-            }
-          }
-        `}
-      </style> */}
     </Wrapper>
   );
 };
