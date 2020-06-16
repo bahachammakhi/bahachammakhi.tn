@@ -39,10 +39,10 @@ const DEFAULT_SEO = {
 function setGoogleTags() {
   return {
     __html: `
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-XXXXXXXX-X');
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-139163951-3');
     `,
   };
 }
