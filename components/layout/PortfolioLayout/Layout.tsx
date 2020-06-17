@@ -38,19 +38,20 @@ const Layout = ({ children }: Props) => {
           width: 100%;
           background-color: white;
           z-index: 5;
-          overflow: hidden;
+          overflow-x: hidden;
         }
         .body {
           padding: 20px;
           padding-top: 100px;
-          overflow: hidden;
+          overflow-x: hidden;
+          max-width: 100vw;
         }
 
         @media only screen and (max-width: 767px) {
           .body {
             padding: 0px;
             padding-top: 80px;
-            overflow: hidden;
+            overflow-x: hidden;
           }
 
           .header {

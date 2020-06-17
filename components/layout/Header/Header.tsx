@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useRouter } from "next/router";
+import { Logo } from "../SideNav/styles";
 // import logo from "./../../img/logo.svg";
 //Components
 import NavItem from "../../ui/NavItem/NavItem";
@@ -28,7 +29,17 @@ const Header = ({ match }: any) => {
   return (
     <>
       <div className="wrapper">
-        <div className="logo">Baha chammakhi</div>
+        {/* <div className="logo">
+        Baha chammakhi
+        </div> */}
+        <img
+          src="/static/default-monochrome-black.svg"
+          className="logo"
+          width="300px"
+          style={{ top: "-100px", position: "relative" }}
+          height="300px"
+          alt="logo"
+        />
         <div className="navigation">{NavItems(router.pathname)}</div>
         <div className="button">
           <Button

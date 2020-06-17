@@ -13,6 +13,7 @@ export const Icons = styled.div`
   margin-right: auto;
   margin-left: auto;
 `;
+export const Logo = styled.img``;
 
 export const SideNav = styled.div`
   width: 280px;

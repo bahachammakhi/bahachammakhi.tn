@@ -1,20 +1,13 @@
 import React, { useState, useEffect } from "react";
-// import art from "./static/lol.png";
-// import groupart from "./static/Groupe5.png";
-import ContactHome from "../components/ui/ContactHome/ContactHome";
-import Technologies from "../components/ui/Technologies/Technologies";
-import Services from "./Services";
-import DevProccess from "./DevProccess/DevProccess";
-import CardProject from "../components/ui/CardProject/CardProject";
+import ContactHome from "../../components/ui/ContactHome/ContactHome";
+import Technologies from "../../components/ui/Technologies/Technologies";
+import Services from "../Services";
+import DevProccess from "../DevProccess/DevProccess";
+import CardProject from "../../components/ui/CardProject/CardProject";
 import Typing from "react-typing-animation";
-import logo from "./static/logo.svg";
-import imnt from "./static/imnt.svg";
-import igc from "./static/igc.png";
-import weather from "./static/weather.svg";
-import portofolio from "./static/portfolio.svg";
-import note from "../static/note.svg";
-import ContactSection from "./ContactSection";
-import { InterButtonOnHover } from "../components/ui/Inter2Button/Inter2Button";
+import ContactSection from "../ContactSection";
+import { Art, Art2, GroupArt, Wrapper } from "./styles";
+import { InterButtonOnHover } from "../../components/ui/Inter2Button/Inter2Button";
 // import withApi from "./../hoc/withApi";
 // import { getAllPortfolios } from "./../requests/requests";
 // import contentLoading from "../hoc/contentLoading";
@@ -136,7 +129,7 @@ const HomeContainer: React.FC = ({ match, getAllPortfolios }: any) => {
   }, [bo]);
 
   return (
-    <div className="wrapper">
+    <Wrapper>
       {
         // theback to top logo Go finish later
         /* <Logo /> */
@@ -166,17 +159,27 @@ const HomeContainer: React.FC = ({ match, getAllPortfolios }: any) => {
         <InterButtonOnHover link="#projects">Portfolio</InterButtonOnHover>
         <InterButtonOnHover link="#contact">Contact me</InterButtonOnHover>
       </div>
-
-      <div className={` animated slideInRight art`}>
-        <img
-          src={"/static/lol.png"}
+      <Art
+        src="/static/lol.png"
+        alt="art"
+        width="500px"
+        top="5vw"
+        position="absolute"
+        right="5vw"
+        zindex={1}
+      />
+      <GroupArt>
+        <Art2
+          src="/static/Groupe5.png"
+          animation={true}
           alt="art"
-          style={{ width: width, marginRight: "150px" }}
+          width="500px"
+          top="5vw"
+          position="absolute"
+          right="-5vw"
+          zindex={0}
         />
-        <div className="groupart">
-          <img src={"/static/Groupe5.png"} alt="art" style={{ width: width }} />
-        </div>
-      </div>
+      </GroupArt>
 
       <div className="services">
         <Services />
@@ -196,12 +199,6 @@ const HomeContainer: React.FC = ({ match, getAllPortfolios }: any) => {
       </div>
       <style jsx>
         {`
-          .art {
-            position: absolute;
-            right: 0px;
-            top: 2px;
-            overflow: hidden;
-          }
           .groupart {
             position: absolute;
             right: -200px;
@@ -235,10 +232,6 @@ const HomeContainer: React.FC = ({ match, getAllPortfolios }: any) => {
           .container {
             display: flex;
             flex-direction: column;
-          }
-          .wrapper {
-            padding: 50px;
-            width: 100%;
           }
           .contact {
             margin-top: 2%;
@@ -306,11 +299,6 @@ const HomeContainer: React.FC = ({ match, getAllPortfolios }: any) => {
           }
 
           @media only screen and (max-width: 767px) {
-            // .wrapper {
-            //   padding: 50px;
-            //  width: 100%;
-            //   overflow: hidden;
-            // }
             .title {
               font-weight: bolder;
               font-size: 30px;
@@ -326,11 +314,6 @@ const HomeContainer: React.FC = ({ match, getAllPortfolios }: any) => {
               width: 300px;
               margin-top: -5%;
               font-size: 15px;
-            }
-            .wrapper {
-              padding: 30px;
-              width: 100%;
-              overflow: hidden;
             }
             .Technologies {
               margin-top: 1%;
@@ -353,7 +336,7 @@ const HomeContainer: React.FC = ({ match, getAllPortfolios }: any) => {
           }
         `}
       </style>
-    </div>
+    </Wrapper>
   );
 };
 // export default withApi({ getAllPortfolios })(HomeContainer);

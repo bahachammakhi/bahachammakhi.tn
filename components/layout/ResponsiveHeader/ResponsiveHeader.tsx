@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { StepBackwardOutlined } from "@ant-design/icons";
+import { RightSquareOutlined } from "@ant-design/icons";
 
 //Components
 import SideNav from "../SideNav/SideNav";
-import { Nav, SideNav as SidenavWrapper, Icons } from "./styles";
+import { Nav, SideNav as SidenavWrapper, Icons, Logo } from "./styles";
 import logo from "../logo.jpg";
 
 const ResponsiveHeader = ({ match }: any) => {
@@ -11,7 +11,7 @@ const ResponsiveHeader = ({ match }: any) => {
   return (
     <>
       <Nav>
-        <StepBackwardOutlined
+        <RightSquareOutlined
           style={{
             fontSize: "30px",
             color: "#333333",

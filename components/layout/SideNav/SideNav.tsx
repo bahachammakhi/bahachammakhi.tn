@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { CloseOutlined } from "@ant-design/icons";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { Wrapper, NavItem } from "./styles";
+import { Wrapper, NavItem, Logo } from "./styles";
 import Button from "../../ui/Button/Button";
 const navlinks = (navitems, router) =>
   navitems.map((item: String) => {
@@ -36,6 +36,11 @@ const SideNav = ({ navitems, matche, setOpen }: any) => {
   const router = useRouter();
   return (
     <Wrapper>
+      <Logo
+        src="/static/default-monochrome-black.svg"
+        width="200px"
+        height="200px"
+      />
       <CloseOutlined
         style={{ fontSize: "20px", padding: "20px" }}
         onClick={() => {
