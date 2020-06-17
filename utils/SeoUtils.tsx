@@ -10,7 +10,7 @@ function setGoogleTags() {
         `,
   };
 }
-const DEFAULT_SEO = {
+export const DEFAULT_SEO = {
   titleTemplate: "Baha chammakhi-Fullstack Javascript Developer",
   title: "Baha chammakhi-Fullstack Javascript Developer",
   description:
@@ -135,7 +135,6 @@ const HeadSEO = () => {
         src="https://www.googletagmanager.com/gtag/js?id=UA-139163951-3"
       ></script>
       <script dangerouslySetInnerHTML={setGoogleTags()} />
-      <DefaultSeo {...DEFAULT_SEO} />
     </Head>
   );
 };
