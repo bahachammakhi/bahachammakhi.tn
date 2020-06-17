@@ -1,11 +1,16 @@
 import { useReducer, createContext } from "react";
 
-interface IApiState<T> {
+export interface IApiState<T> {
   fetching: boolean;
   error: string;
   data: T;
   errors: any[];
 }
+export interface useApiRequest {
+  state: IApiState<any>;
+  call: () => void;
+}
+
 function useApiState<Fn extends (...args: any[]) => Promise<any>, T = any>(
   fn: Fn
 ) {
