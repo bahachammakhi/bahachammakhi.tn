@@ -6,7 +6,7 @@ import DevProccess from "../DevProccess/DevProccess";
 import CardProject from "../../components/ui/CardProject/CardProject";
 import Typing from "react-typing-animation";
 import ContactSection from "../ContactSection";
-import { Art, GroupArt, Wrapper } from "./styles";
+import { Art, Art2, GroupArt, Wrapper } from "./styles";
 import { InterButtonOnHover } from "../../components/ui/Inter2Button/Inter2Button";
 // import withApi from "./../hoc/withApi";
 // import { getAllPortfolios } from "./../requests/requests";
@@ -169,8 +169,9 @@ const HomeContainer: React.FC = ({ match, getAllPortfolios }: any) => {
         zindex={1}
       />
       <GroupArt>
-        <Art
+        <Art2
           src="/static/Groupe5.png"
+          animation={true}
           alt="art"
           width="500px"
           top="5vw"

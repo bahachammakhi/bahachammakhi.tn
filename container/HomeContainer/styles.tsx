@@ -34,11 +34,13 @@ export const Art = styled.img<ArtProps>`
     display: none;
   }
 `;
+export const Art2 = styled(Art)`
+  animation: ${rotation} infinite 20s linear;
+`;
 
 export const GroupArt = styled.div`
   clip: rect(200px, 5000px, 5000px, 0px);
   overflow: hidden;
-  animation: ${rotation} 8s infinite linear;
 `;
 
 export const Wrapper = styled.div`

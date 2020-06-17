@@ -38,6 +38,7 @@ const Header = ({ match }: any) => {
           width="300px"
           style={{ top: "-100px", position: "relative" }}
           height="300px"
+          alt="logo"
         />
         <div className="navigation">{NavItems(router.pathname)}</div>
         <div className="button">
