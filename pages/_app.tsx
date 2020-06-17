@@ -2,7 +2,9 @@ import React, { createContext, ContextType } from "react";
 import "antd/dist/antd.css";
 import useApi from "../hooks/useApi";
 import { getPeople } from "../requests/requests";
-import SEO from "../utils/SeoUtils";
+import SEO, { DEFAULT_SEO } from "../utils/SeoUtils";
+import { DefaultSeo } from "next-seo";
+
 import { useApiRequest } from "../hooks/useApi";
 
 export interface callsType {
@@ -27,6 +29,7 @@ const MyApp = ({ Component, pageProps }: any): any => {
     <Redux.Provider value={{ name: process.env.NAME, calls: calls }}>
       <Component {...pageProps} />
       <SEO />
+      <DefaultSeo {...DEFAULT_SEO} />
       <style global jsx>
         {`
           body {
