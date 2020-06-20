@@ -18,7 +18,7 @@ module.exports = withImages(
         ENVIRONMENT: process.env.ENVIRONMENT,
         NAME: "Baha eddine Chammakhi",
         BASE_URL_STRAPIDEV: "http://localhost:1337",
-        // BASE_URL: "https://strapi-bahachammakhi.herokuapp.com/",
+        BASE_URL: "https://strapi-bahachammakhi.herokuapp.com/",
       },
       webpack(config, options) {
         return config;
