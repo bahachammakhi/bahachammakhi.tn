@@ -33,11 +33,11 @@ const CardFront = ({ data, handleChange }: any) => {
     <CardWrapper>
       <CardContent>
         <CardTextTitle>{data?.name}</CardTextTitle>
-        <CardTextParag>{data?.details}</CardTextParag>
+        <CardTextParag>{data?.description}</CardTextParag>
       </CardContent>
       <CardContent>
         <Row>
-          <Square>{data?.date}</Square>
+          <Square>{data?.finished_at}</Square>
           <Circle onClick={() => handleChange(true)}>
             <NextArrow />
             <NextArrow style={{ top: "-12px", right: "-15px" }} />
@@ -45,14 +45,14 @@ const CardFront = ({ data, handleChange }: any) => {
         </Row>
 
         <img
-          src={data?.img}
+          src={data?.cover?.url}
           style={{
             position: "relative",
             zIndex: 0,
             top: "-25px",
             width: "150px",
           }}
-          alt="Project"
+          alt={data?.name}
         />
       </CardContent>
     </CardWrapper>
@@ -69,7 +69,17 @@ const CardBack = ({ data, handleChange }: any) => {
         </Circle>
 
         <RowModi>
-          <Image src={data?.path} alt="img" />
+          {/* <Image src={data?.cover?.url} alt={data?.name} /> */}
+          <img
+            src={data?.cover?.url}
+            style={{
+              // position: "relative",
+              // zIndex: 0,
+              // top: "-25px",
+              width: "300px",
+            }}
+            alt={data?.name}
+          />
           <Column>
             {data?.github ? (
               <IconLink

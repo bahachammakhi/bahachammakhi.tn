@@ -11,12 +11,14 @@ module.exports = withImages(
   withPWA(
     withMDX({
       pwa: {
+        disable: process.env.NODE_ENV === "development",
         dest: "public",
       },
       env: {
         ENVIRONMENT: process.env.ENVIRONMENT,
         NAME: "Baha eddine Chammakhi",
-        BASE_URL: "https://swapi.dev/api/",
+        BASE_URL_STRAPIDEV: "http://localhost:1337",
+        // BASE_URL: "https://strapi-bahachammakhi.herokuapp.com/",
       },
       webpack(config, options) {
         return config;

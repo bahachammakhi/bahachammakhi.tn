@@ -61,7 +61,7 @@ export const ButtonDiss = styled.div<any>`
 const ContactSection = () => {
   const [start, handleStart] = useState(false);
   return (
-    <SectionWrapper start={start}>
+    <SectionWrapper start={false}>
       <ContactForm />
       <Img src={Art} alt="art" />
       <ButtonDiss onClick={() => handleStart(true)} start={start}>

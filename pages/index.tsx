@@ -4,22 +4,22 @@ import Layout from "../components/layout/PortfolioLayout/Layout";
 import HomeContainer from "../container/HomeContainer/HomeContainer";
 import { Redux } from "./_app";
 import { NextSeo } from "next-seo";
-
+import MessengerCustomerChat from "../utils/MessangerChat";
 export default function Home({ name, data }) {
-  console.log("name", name, data);
   const state = useContext(Redux);
-  useEffect(() => {
-    state.calls.getPeople.call();
-  }, []);
-  console.log("Response1", state.calls.getPeople);
-
   return (
     <Layout>
+      {/* <Drift
+        appId="xbihnxs9wsb5"
+        userId="1234"
+        attributes={{ email: "user@example.com", company: "Acme Inc" }}
+      /> */}
+      <MessengerCustomerChat pageId="714175575683300" appId="272738577387387" />
       <NextSeo
         title="Baha chammakhi-Fullstack JS- Home"
         description="I am a motivated Fullstack js developer mainly working with the MERN stack always trying to ensurebest practices to keep my code clean. Dont hesitate to contact me to bring your project to live !"
       />
-      <HomeContainer />
+      <HomeContainer redux={state} />
     </Layout>
   );
 }

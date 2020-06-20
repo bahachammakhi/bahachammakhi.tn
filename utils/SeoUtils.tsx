@@ -10,6 +10,35 @@ function setGoogleTags() {
         `,
   };
 }
+
+const scriptText = `!function() {
+  var t = window.driftt = window.drift = window.driftt || [];
+  if (!t.init) {
+    if (t.invoked) return void (window.console && console.error && console.error("Drift snippet included twice."));
+    t.invoked = !0, t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on", "setUserAttributes" ],
+    t.factory = function(e) {
+      return function() {
+        var n = Array.prototype.slice.call(arguments);
+        return n.unshift(e), t.push(n), t;
+      };
+    }, t.methods.forEach(function(e) {
+      t[e] = t.factory(e);
+    }), t.load = function(t) {
+      var e = 3e5, n = Math.ceil(new Date() / e) * e, o = document.createElement("script");
+      o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js";
+      var i = document.getElementsByTagName("script")[0];
+      i.parentNode.insertBefore(o, i);
+    };
+  }
+}();
+drift.SNIPPET_VERSION = '0.3.1';
+drift.load('xbihnxs9wsb5');
+`;
+function setDrif() {
+  return {
+    __html: `${scriptText}`,
+  };
+}
 export const DEFAULT_SEO = {
   titleTemplate: "Baha chammakhi-Fullstack Javascript Developer",
   title: "Baha chammakhi-Fullstack Javascript Developer",
@@ -46,7 +75,7 @@ const HeadSEO = () => {
         name="keywords"
         content="bahachammakhi baha chammakhi developer tunisian tunisia tunisien portfolio JS javascript js fullstack frontend backend devops docker react nodejs vuejs angular firebase mongodb strapi "
       />
-      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
       <meta name="application-name" content="Baha chammakhi Fullstackjs" />
       <meta name="apple-mobile-web-app-capable" content="yes" />
       <meta name="apple-mobile-web-app-status-bar-style" content="default" />
@@ -129,11 +158,16 @@ const HeadSEO = () => {
         property="og:image"
         content="https://bahachammakhi.tn/static/icons/apple-touch-icon.png"
       />
-
+      <script
+        async
+        defer
+        src="https://connect.facebook.net/en_US/sdk.js"
+      ></script>
       <script
         async
         src="https://www.googletagmanager.com/gtag/js?id=UA-139163951-3"
       ></script>
+      {/* <script dangerouslySetInnerHTML={setDrif()} /> */}
       <script dangerouslySetInnerHTML={setGoogleTags()} />
     </Head>
   );

@@ -7,4 +7,4 @@ import {
   axiosPut,
 } from "./http";
 
-export const getPeople = (): Promise<Response<any>> => axiosGet("/people");
+export const getProjects = (): Promise<Response<any>> => axiosGet("/projects");

@@ -64,6 +64,7 @@ function useApiState<Fn extends (...args: any[]) => Promise<any>, T = any>(
       });
       dispatch({ type: "fetching" });
       const response = await fn(...apiParams);
+      console.log("response", response);
       if (
         (response.code >= 200 && response.code < 400 && response.data) ||
         (response.status >= 200 && response.status < 400)
