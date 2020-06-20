@@ -1,7 +1,10 @@
 import axios, { AxiosResponse } from "axios";
 
 // const BaseURL = process.env.BASE_URL;
-const BaseURL = process.env.BASE_URL_STRAPIDEV;
+const BaseURL =
+  process.env.NODE_ENV === "development"
+    ? process.env.BASE_URL_STRAPIDEV
+    : process.env.BASE_URL;
 
 export let authorizationBearer: string | null = null;
 

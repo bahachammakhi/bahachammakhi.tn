@@ -10,11 +10,8 @@ function setGoogleTags() {
         `,
   };
 }
-const scriptText = `  window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'UA-139163951-3');
-!function() {
+
+const scriptText = `!function() {
   var t = window.driftt = window.drift = window.driftt || [];
   if (!t.init) {
     if (t.invoked) return void (window.console && console.error && console.error("Drift snippet included twice."));
@@ -35,7 +32,8 @@ gtag('config', 'UA-139163951-3');
   }
 }();
 drift.SNIPPET_VERSION = '0.3.1';
-drift.load('xbihnxs9wsb5');`;
+drift.load('xbihnxs9wsb5');
+`;
 function setDrif() {
   return {
     __html: `${scriptText}`,
@@ -160,13 +158,17 @@ const HeadSEO = () => {
         property="og:image"
         content="https://bahachammakhi.tn/static/icons/apple-touch-icon.png"
       />
-
+      <script
+        async
+        defer
+        src="https://connect.facebook.net/en_US/sdk.js"
+      ></script>
       <script
         async
         src="https://www.googletagmanager.com/gtag/js?id=UA-139163951-3"
       ></script>
-      <script dangerouslySetInnerHTML={setDrif()} />
-      {/* <script dangerouslySetInnerHTML={setGoogleTags()} /> */}
+      {/* <script dangerouslySetInnerHTML={setDrif()} /> */}
+      <script dangerouslySetInnerHTML={setGoogleTags()} />
     </Head>
   );
 };

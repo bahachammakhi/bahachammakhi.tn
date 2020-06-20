@@ -68,8 +68,18 @@ const CardBack = ({ data, handleChange }: any) => {
           <NextArrow direction="right" style={{ top: "-12px", left: "16px" }} />
         </Circle>
 
-        {/* <RowModi>
-          <Image src={data?.path} alt="img" />
+        <RowModi>
+          {/* <Image src={data?.cover?.url} alt={data?.name} /> */}
+          <img
+            src={data?.cover?.url}
+            style={{
+              // position: "relative",
+              // zIndex: 0,
+              // top: "-25px",
+              width: "300px",
+            }}
+            alt={data?.name}
+          />
           <Column>
             {data?.github ? (
               <IconLink
@@ -96,7 +106,7 @@ const CardBack = ({ data, handleChange }: any) => {
               <div />
             )}
           </Column>
-        </RowModi> */}
+        </RowModi>
       </CardContent>
 
       <Rectangle>{TechnologiesCard}</Rectangle>
