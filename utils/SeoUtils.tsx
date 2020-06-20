@@ -46,7 +46,7 @@ const HeadSEO = () => {
         name="keywords"
         content="bahachammakhi baha chammakhi developer tunisian tunisia tunisien portfolio JS javascript js fullstack frontend backend devops docker react nodejs vuejs angular firebase mongodb strapi "
       />
-      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
       <meta name="application-name" content="Baha chammakhi Fullstackjs" />
       <meta name="apple-mobile-web-app-capable" content="yes" />
       <meta name="apple-mobile-web-app-status-bar-style" content="default" />

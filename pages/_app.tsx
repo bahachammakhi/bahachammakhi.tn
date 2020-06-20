@@ -1,7 +1,9 @@
 import React, { createContext, ContextType } from "react";
+import Head from "next/head";
 import "antd/dist/antd.css";
+import Drift from "react-driftjs";
 import useApi from "../hooks/useApi";
-import { getPeople } from "../requests/requests";
+import { getProjects } from "../requests/requests";
 import SEO, { DEFAULT_SEO } from "../utils/SeoUtils";
 import { DefaultSeo } from "next-seo";
 
@@ -23,10 +25,11 @@ export function reportWebVitals(metric: any) {
 }
 
 const MyApp = ({ Component, pageProps }: any): any => {
-  const { ...calls } = useApi({ getPeople });
+  const { ...calls } = useApi({ getProjects });
   // console.log("pageProps", pageProps);
   return (
     <Redux.Provider value={{ name: process.env.NAME, calls: calls }}>
+      <Drift appId="xbihnxs9wsb5" />
       <Component {...pageProps} />
       <SEO />
       <DefaultSeo {...DEFAULT_SEO} />
