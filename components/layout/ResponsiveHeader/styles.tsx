@@ -18,7 +18,7 @@ export const Logo = styled.img``;
 export const SideNav = styled.div`
   width: 280px;
   background-color: white;
-  z-index: 5;
+  z-index: 50000000000000000000000;
   position: fixed;
   top: 0;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);

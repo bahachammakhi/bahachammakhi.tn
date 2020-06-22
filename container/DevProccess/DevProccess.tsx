@@ -35,7 +35,7 @@ const StepsContainer = (current) => {
   return data.map((element, index) => {
     const number = element.step + 1;
     return (
-      <div key={index}>
+      <div key={index} style={{ display: "flex" }}>
         <StepsCircle
           activated={current === element.step}
           done={current > element.step}
@@ -46,6 +46,8 @@ const StepsContainer = (current) => {
           <Line
             style={{
               backgroundColor: current > element.step ? "#2A878F" : "gray",
+              position: "relative",
+              top: "20px",
             }}
           />
         ) : (

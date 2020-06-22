@@ -45,7 +45,7 @@ const ResponsiveHeader = ({ match }: any) => {
       <SidenavWrapper>
         {opened ? (
           <div
-            style={{ height: "700px" }}
+            style={{ height: "700px", zIndex: 50000 }}
             className=" sidenav animated slideInLeft"
           >
             <SideNav

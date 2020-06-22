@@ -23,7 +23,7 @@ const icons = imgs.map((img, key) => {
     </div>
   );
 });
-const Footer = () => {
+const Footer: any = ({ email, phone, footer, social_media }) => {
   return (
     <div className="wrapper">
       <hr />
@@ -44,14 +44,14 @@ const Footer = () => {
 
         <div className="contactsection">
           <p className="title">Contact me on</p>
-          <p>Email: bahachammakhi25@gmail.com</p>
-          <p>Phone: 55592675</p>
+          <p>Email: {email}</p>
+          <p>Phone: {phone}</p>
         </div>
       </div>
 
       <hr />
       <div className="copyrigth">
-        <p>bahachammakhi.me © 2019 all rigths reserved</p>
+        <p>{footer}</p>
       </div>
       <style jsx>{`
         .wrapper {
