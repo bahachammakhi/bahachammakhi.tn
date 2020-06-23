@@ -12,7 +12,7 @@ const Project = ({ data, context, projects }) => {
   return (
     <Layout>
       <NextSeo
-        title={`Baha chammakhi-${data.name}`}
+        title={`Baha chammakhi-${data?.name}`}
         description={data?.description}
       />
       <ProjectContainer projects={projects} data={data} />

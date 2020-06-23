@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { InterButtonOnHover } from "../Inter2Button/Inter2Button";
 import { TopRightTriangle, ImageIcon } from "../Shapes/Shapes";
 // import contentLoading from "../../hoc/contentLoading";
-import codeicon from "../../../static/codeicon.png";
 import { Title, Wrapper } from "./styles";
 
 interface Props {
@@ -21,7 +20,7 @@ const ServiceCard = ({ title, description }: Props) => {
         }}
       >
         <TopRightTriangle>
-          <ImageIcon src={codeicon} alt="web" />
+          <ImageIcon src={"/static/codeicon.png"} alt="web" />
         </TopRightTriangle>
         <div>
           <Title>{title}</Title>

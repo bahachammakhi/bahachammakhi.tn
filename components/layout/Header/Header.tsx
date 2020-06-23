@@ -25,7 +25,6 @@ const NavItems = (pathname) => {
 const Header = ({ match }: any) => {
   const [state, changestate] = useState(true);
   const router = useRouter();
-  console.log(router);
   return (
     <>
       <div className="wrapper">

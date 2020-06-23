@@ -18,7 +18,6 @@ const HomeContainer: React.FC<any> = ({ redux }: Props) => {
   const [state, setState] = useState("Lets build your next ");
   const [state1, setState1] = useState("big idea");
   const [projects, setProjects] = useState([]);
-  console.log("state", state);
   let width = "180px";
 
   useDidMount(() => {
@@ -27,7 +26,6 @@ const HomeContainer: React.FC<any> = ({ redux }: Props) => {
   useEffect(() => {
     setProjects(redux.calls.getProjects.data);
   }, [redux.calls.getProjects.success]);
-  console.log("Projects", projects);
 
   useEffect(() => {
     if (window.innerWidth < 768) {

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 import ContactForm from "./ContactForm/ContactForm";
-import Art from "../static/artcontact.jpg";
 import InterButton from "../components/ui/InterButton/InterButton";
 import styled, { css, keyframes } from "styled-components";
 const Start = css`
@@ -63,7 +62,7 @@ const ContactSection = () => {
   return (
     <SectionWrapper start={false}>
       <ContactForm />
-      <Img src={Art} alt="art" />
+      <Img src={"/static/artcontact.jpg"} alt="art" />
       <ButtonDiss onClick={() => handleStart(true)} start={start}>
         <InterButton />
       </ButtonDiss>

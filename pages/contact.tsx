@@ -1,6 +1,5 @@
 import React from "react";
 import ContactForm from "../container/ContactForm/ContactForm";
-import contactImg from "../static/contact.jpg";
 import Layout from "../components/layout/PortfolioLayout/Layout";
 import { NextSeo } from "next-seo";
 
@@ -13,7 +12,7 @@ const ContactConatainer = () => {
       />
       <div className={"wrapper-contact-page"}>
         <div>
-          <img className="img1-contact-page" src={contactImg} />
+          <img className="img1-contact-page" src={"/static/contact.jpg"} />
         </div>
         <div>
           <ContactForm />

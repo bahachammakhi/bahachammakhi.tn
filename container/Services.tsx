@@ -7,7 +7,6 @@ const services = [
 
 const Services = () => {
   const serviceGroup = services.map((el, n) => {
-    console.log("working");
     let animation = "fade-left";
     let classname = "card";
     if (n % 2 === 0) {

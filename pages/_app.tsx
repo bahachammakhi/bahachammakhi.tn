@@ -19,18 +19,15 @@ type useApiContextType = {
 };
 export const Redux = createContext<useApiContextType | undefined>(undefined);
 
-//https://strapi.io/blog/build-a-blog-with-next-react-js-strapi-and-apollo
-
 export function reportWebVitals(metric: any) {
   console.log("metric", metric);
 }
 
 const MyApp = ({ Component, pageProps }: any): any => {
   const { ...calls } = useApi({ getProjects, getSettings });
-  // console.log("pageProps", pageProps);
+
   return (
     <Redux.Provider value={{ name: process.env.NAME, calls: calls }}>
-      {/* <Drift appId="xbihnxs9wsb5" /> */}
       <Component {...pageProps} />
       <SEO />
       <MessengerCustomerChat pageId="714175575683300" appId="272738577387387" />
