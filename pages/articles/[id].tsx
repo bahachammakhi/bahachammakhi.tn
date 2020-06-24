@@ -3,7 +3,8 @@ import Moment from "react-moment";
 import { getArticle, getArticles } from "../../requests/requests";
 import styled from "styled-components";
 import Layout from "../../components/layout/PortfolioLayout/Layout";
-import { NextSeo } from "next-seo";
+import Head from "next/head";
+
 const Image = styled.img`
   width: ${(props) => props.width};
   height: ${(props) => props.height};
@@ -49,10 +50,14 @@ const Article = ({ article }) => {
   renderers["image"] = imageRenderer;
   return (
     <Layout>
-      <NextSeo
-        title={`Baha chammakhi-${article?.title}`}
-        description={article?.preview}
-      />
+      <Head>
+        <title>Baha chammakhi-{article?.title}</title>
+        <meta name="description" content={article?.preview}></meta>
+        <meta
+          name="keywords"
+          content={`blogs, articles,Javascript,Code,Programming,Baha ,chammakhi, Portfolio, Projects, bahachammakhi, devops,arcitecture,tunisia,developer,nodejs,typescript,${article?.title},${article?.preview}`}
+        ></meta>
+      </Head>
       <Wrap>
         <div
           id="banner"
