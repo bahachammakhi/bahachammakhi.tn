@@ -8,6 +8,7 @@ import Button from "../../ui/Button/Button";
 // import Logo from "./Logo";
 const Links = [
   { name: "Home", pathname: "/" },
+  { name: "Projects", pathname: "/projects" },
   { name: "Contact", pathname: "/contact" },
 ];
 const NavItems = (pathname) => {
