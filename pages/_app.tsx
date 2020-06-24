@@ -2,7 +2,12 @@ import React, { createContext, ContextType } from "react";
 import "antd/dist/antd.css";
 import dynamic from "next/dynamic";
 import useApi from "../hooks/useApi";
-import { getProjects, getSettings, postContact } from "../requests/requests";
+import {
+  getProjects,
+  getSettings,
+  postContact,
+  getArticles,
+} from "../requests/requests";
 // import MessengerCustomerChat from "../utils/MessangerChat";
 const MessengerCustomerChat = dynamic(() => import("../utils/MessangerChat"), {
   ssr: false,
@@ -24,7 +29,12 @@ export function reportWebVitals(metric: any) {
 }
 
 const MyApp = ({ Component, pageProps }: any): any => {
-  const { ...calls } = useApi({ getProjects, getSettings, postContact });
+  const { ...calls } = useApi({
+    getProjects,
+    getSettings,
+    postContact,
+    getArticles,
+  });
 
   return (
     <Redux.Provider value={{ name: process.env.NAME, calls: calls }}>

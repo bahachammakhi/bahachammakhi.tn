@@ -1,7 +1,23 @@
 import ReactMarkdown from "react-markdown";
 import Moment from "react-moment";
 import { getArticle, getArticles } from "../../requests/requests";
+import styled from "styled-components";
 import Layout from "../../components/layout/PortfolioLayout/Layout";
+import { NextSeo } from "next-seo";
+const Image = styled.img`
+  width: ${(props) => props.width};
+  height: ${(props) => props.height};
+  @media screen and (max-width: 768px) {
+    width: 300px;
+    height: 300px;
+  }
+`;
+const Wrap = styled.div`
+  padding: 5% 15% 5% 15%;
+  @media screen and (max-width: 768px) {
+    padding: 5% 5% 5% 5%;
+  }
+`;
 const imageSizeRegex = /_33B2BF251EFD_([0-9]+x|x[0-9]+|[0-9]+x[0-9]+)$/;
 const imagePreprocessor = (source) =>
   source.replace(
@@ -12,15 +28,16 @@ function imageRenderer({ src, ...props }) {
   const match = imageSizeRegex.exec(src);
 
   if (!match) {
-    return <img src={src} alt="RendredPicture" {...props} />;
+    return <Image src={src} alt="RendredPicture" {...props} />;
   }
 
   const [width, height] = match[1]
     .split("x")
     .map((s) => (s === "" ? undefined : Number(s)));
   return (
-    <img
+    <Image
       src={src.replace(imageSizeRegex, "")}
+      alt="RendredPicture"
       width={width}
       height={height}
       {...props}
@@ -32,7 +49,11 @@ const Article = ({ article }) => {
   renderers["image"] = imageRenderer;
   return (
     <Layout>
-      <div style={{ padding: "5% 15% 5% 15%" }}>
+      <NextSeo
+        title={`Baha chammakhi-${article?.title}`}
+        description={article?.preview}
+      />
+      <Wrap>
         <div
           id="banner"
           className="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light uk-padding uk-margin"
@@ -54,13 +75,16 @@ const Article = ({ article }) => {
             </h2>
           </div>
         </div>
-      </div>
+      </Wrap>
     </Layout>
   );
 };
 
 export async function getStaticPaths() {
   const articles = await getArticles();
+  // const paths = articles?.data?.map((article) => ({
+  //   params: { id: article?._id, slug: article?.title },
+  // }));
   return {
     paths: articles?.data?.map((article) => `/articles/${article._id}`) || [],
     fallback: false,

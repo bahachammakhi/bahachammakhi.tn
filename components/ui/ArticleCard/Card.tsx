@@ -39,7 +39,7 @@ const Title = styled.p`
   font-family: "sharp-sans", Montserrat, Verdana, sans-serif;
   color: white;
 `;
-const ArticleCard = ({ title, content, image, published_at }: any) => {
+const ArticleCard = ({ title, content, image, published_at, preview }: any) => {
   return (
     <div>
       <CardStyled
@@ -59,7 +59,7 @@ const ArticleCard = ({ title, content, image, published_at }: any) => {
         <Meta
           description={
             <Paragraph ellipsis={{ rows: 8, expandable: false }}>
-              {content.slice(10, 100)}....
+              {preview}....
             </Paragraph>
           }
         />
