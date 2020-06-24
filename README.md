@@ -85,7 +85,8 @@ List of features ready and TODOs for future development
 
 To-do list:
 
-- Add bloging system (On progress!)
+- Add Articles system (On progress!)
+- Viewers , Likes system for Articles
 - Add opensource projects section
 - Cover Unit tests
 - Complete typescript typing

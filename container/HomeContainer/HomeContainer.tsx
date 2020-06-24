@@ -9,6 +9,7 @@ import ContactSection from "../ContactSection";
 import { Art, Art2, GroupArt, Wrapper, MobileUxPic } from "./styles";
 import { InterButtonOnHover } from "../../components/ui/Inter2Button/Inter2Button";
 import { useDidMount } from "../../hooks/useLifeCycle";
+import ArticlesGrid from "../../components/ui/ArticlesGrid/ArticlesGrid";
 interface Props {
   redux: any;
 }
@@ -18,14 +19,21 @@ const HomeContainer: React.FC<any> = ({ redux }: Props) => {
   const [state, setState] = useState("Lets build your next ");
   const [state1, setState1] = useState("big idea");
   const [projects, setProjects] = useState([]);
+  const [articles, setArticles] = useState([]);
   let width = "180px";
 
   useDidMount(() => {
     redux.calls.getProjects.call();
+    redux.calls.getArticles.call();
   });
   useEffect(() => {
-    setProjects(redux.calls.getProjects.data);
-  }, [redux.calls.getProjects.success]);
+    if (redux?.calls?.getProjects?.success) {
+      setProjects(redux.calls.getProjects.data);
+    }
+    if (redux?.calls?.getProjects?.success) {
+      setArticles(redux?.calls?.getArticles?.data);
+    }
+  }, [redux.calls.getProjects.success, redux.calls.getArticles.success]);
 
   useEffect(() => {
     if (window.innerWidth < 768) {
@@ -109,6 +117,7 @@ const HomeContainer: React.FC<any> = ({ redux }: Props) => {
       <div className="process">
         <DevProccess />
       </div>
+      <h1>Projects:</h1>
       <div id="projects" style={{ display: "flex", flexWrap: "wrap" }}>
         {projects.length > 0 ? (
           projects.map((el, index) => (
@@ -119,6 +128,10 @@ const HomeContainer: React.FC<any> = ({ redux }: Props) => {
         ) : (
           <>Loading</>
         )}
+      </div>
+      <div>
+        <h1>Articles:</h1>
+        <ArticlesGrid data={articles} />
       </div>
       <div id="contact" style={{ overflow: "hidden" }}>
         <ContactSection />

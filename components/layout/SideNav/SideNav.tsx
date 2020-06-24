@@ -4,10 +4,11 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { Wrapper, NavItem, Logo } from "./styles";
 import Button from "../../ui/Button/Button";
-const navlinks = (navitems, router) =>
+const navlinks = (navitems: any, router: any) =>
   navitems.map((item: String) => {
     const path =
       item === "Home" ? "/" : item.charAt(0).toLowerCase() + item.substring(1);
+    console.log("item", path);
     return router.pathname === `/${path}` ||
       (router.pathname === "/" && item === "Home") ? (
       <NavItem
