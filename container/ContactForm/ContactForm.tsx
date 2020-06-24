@@ -13,7 +13,6 @@ const ContactForm = ({
   CreateNewContact,
   clearValues,
 }: any) => {
-  // console.log(CreateNewContact);
   const handleClick = () => {
     if (
       values.email !== "" &&

@@ -1,11 +1,13 @@
 import React, { createContext, ContextType } from "react";
-import Head from "next/head";
 import "antd/dist/antd.css";
-import Drift from "react-driftjs";
+import dynamic from "next/dynamic";
 import useApi from "../hooks/useApi";
-import { getProjects } from "../requests/requests";
+import { getProjects, getSettings } from "../requests/requests";
+// import MessengerCustomerChat from "../utils/MessangerChat";
+const MessengerCustomerChat = dynamic(() => import("../utils/MessangerChat"), {
+  ssr: false,
+});
 import SEO, { DEFAULT_SEO } from "../utils/SeoUtils";
-// import MessengerCustomerChat from "react-messenger-customer-chat";
 import { DefaultSeo } from "next-seo";
 import { useApiRequest } from "../hooks/useApi";
 export interface callsType {
@@ -17,20 +19,18 @@ type useApiContextType = {
 };
 export const Redux = createContext<useApiContextType | undefined>(undefined);
 
-//https://strapi.io/blog/build-a-blog-with-next-react-js-strapi-and-apollo
-
 export function reportWebVitals(metric: any) {
   console.log("metric", metric);
 }
 
 const MyApp = ({ Component, pageProps }: any): any => {
-  const { ...calls } = useApi({ getProjects });
-  // console.log("pageProps", pageProps);
+  const { ...calls } = useApi({ getProjects, getSettings });
+
   return (
     <Redux.Provider value={{ name: process.env.NAME, calls: calls }}>
-      {/* <Drift appId="xbihnxs9wsb5" /> */}
       <Component {...pageProps} />
       <SEO />
+      <MessengerCustomerChat pageId="714175575683300" appId="272738577387387" />
       <DefaultSeo {...DEFAULT_SEO} />
       <style global jsx>
         {`

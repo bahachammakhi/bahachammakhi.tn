@@ -1,30 +1,131 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Baha chammakhi
 
-## Getting Started
+![Twitter URL](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2Fbahachammakhi) ![GitHub followers](https://img.shields.io/github/followers/bahachammakhi?style=social)
 
-First, run the development server:
+> Baha chammakhi is my personal portfolio 🧑‍💻
+
+![Logo](./static/default-monochrome-black.svg)
+
+## Table of contents
+
+- [Links](#Links)
+- [Technologies](#technologies)
+- [Setup](#setup)
+- [Features](#features)
+- [Folder-Structure](#Folder-Structure)
+- [Status](#status)
+- [Contact](#contact)
+
+## Links
+
+`https://www.bahachammakhi.tn`
+
+## Technologies
+
+- [Typescript](https://www.typescriptlang.org/) TypeScript is a typed superset of JavaScript that compiles to plain JavaScript. 💻
+- [React](https://reactjs.org/) A JavaScript library for building user interfaces. 💻
+- [Nextjs](https://nextjs.org/) React js framework. 💻
+- [Styled-components](https://styled-components.com/) styled-components is the result of wondering how we could enhance CSS for styling React component systems.
+
+## Setup
+
+Clone the project :
 
 ```bash
-npm run dev
-# or
-yarn dev
+$git clone https://github.com/bahachammakhi/bahachammakhi.git
+
+$cd bahachammakhi
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Install dependencies :
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+```bash
+$yarn
+#or
+$npm install
+```
 
-## Learn More
+### Follow these steps:
 
-To learn more about Next.js, take a look at the following resources:
+### Run in development:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+$npm run dev
+# or
+$yarn dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Simple build for production
+
+```bash
+$npm run build
+# or
+$yarn build
+```
+
+### start:
+
+```bash
+$npm start
+# or
+$yarn start
+```
+
+Visit on:
+`http://localhost:3000`
+
+## Features
+
+List of features ready and TODOs for future development
+
+- Listing projects
+- Home animation
+- Details on projects
+
+To-do list:
+
+- Add blog
+- Add opensource projects section
+- Cover Unit tests
+- Complete typescript typing
+- Refactoring
+
+## Folder-Structure
+
+After creation, your project should look like this:
+
+```
+bahachammakhi/
+  README.md
+  node_modules/
+  package.json
+  tsconfig.json
+  pages/
+       _app.tsx
+       _document.tsx
+       contact.tsx
+       index.tsx
+       /api
+           hello.ts
+  hooks/
+        useApi.ts
+        useLifeCycle.ts
+  container/
+  components/
+  static/
+  utils/
+```
+
+## Status
+
+Project is: _in progress_
 
 ## Deploy on Vercel
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Contact
+
+Created by [@bahachammakhi](https://www.bahachammakhi.tn/) - feel free to contact me!

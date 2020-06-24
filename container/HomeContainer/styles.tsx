@@ -21,6 +21,17 @@ const rotation = keyframes`
   }
 `;
 // const Img: React.FC<ArtProps> = (props): any => <>{props.children}</>;
+export const MobileUxPic = styled.img<any>`
+  width: ${(props) => props.width};
+  z-index: ${(props) => props.zindex};
+  overflow-x: hidden;
+  @media screen and (min-width: 1200px) {
+    display: none;
+  }
+  @media screen and (max-width: 780px) {
+    display: flex;
+  }
+`;
 export const Art = styled.img<ArtProps>`
   width: ${(props) => props.width};
   position: ${(props) => props.position};
@@ -30,6 +41,9 @@ export const Art = styled.img<ArtProps>`
   right: ${(props) => props.right};
   z-index: ${(props) => props.zindex};
   overflow-x: hidden;
+  @media screen and (max-width: 1200px) {
+    display: none;
+  }
   @media screen and (max-width: 780px) {
     display: none;
   }

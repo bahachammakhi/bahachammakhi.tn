@@ -4,7 +4,6 @@ import { RightSquareOutlined } from "@ant-design/icons";
 //Components
 import SideNav from "../SideNav/SideNav";
 import { Nav, SideNav as SidenavWrapper, Icons, Logo } from "./styles";
-import logo from "../logo.jpg";
 
 const ResponsiveHeader = ({ match }: any) => {
   const [opened, setOpened] = useState(false);
@@ -45,13 +44,13 @@ const ResponsiveHeader = ({ match }: any) => {
       <SidenavWrapper>
         {opened ? (
           <div
-            style={{ height: "700px" }}
+            style={{ height: "700px", zIndex: 50000 }}
             className=" sidenav animated slideInLeft"
           >
             <SideNav
               matche={match}
               setOpen={setOpened}
-              navitems={["Home", "Contact"]}
+              navitems={["Home", "Projects", "Contact"]}
             />{" "}
           </div>
         ) : (

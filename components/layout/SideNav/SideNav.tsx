@@ -42,7 +42,7 @@ const SideNav = ({ navitems, matche, setOpen }: any) => {
         height="200px"
       />
       <CloseOutlined
-        style={{ fontSize: "20px", padding: "20px" }}
+        style={{ fontSize: "20px", padding: "20px", zIndex: 50000 }}
         onClick={() => {
           setOpen(false);
         }}

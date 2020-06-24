@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
+import { Redux } from "../../../pages/_app";
 import { useDidMount } from "../../../hooks/useLifeCycle";
 import ResponsiveHeader from "../ResponsiveHeader/ResponsiveHeader";
 
@@ -8,6 +9,7 @@ interface Props {
   children: any;
 }
 const Layout = ({ children }: Props) => {
+  const redux = useContext(Redux);
   const [state, setState] = useState(1800);
 
   // const resize = () => {
@@ -22,15 +24,25 @@ const Layout = ({ children }: Props) => {
     if (window.innerWidth < 700) {
       setState(600);
     }
+    redux.calls.getSettings.call();
   });
+  const {
+    email,
+    description,
+    phone,
+    footer,
+    social_media,
+    uptowork,
+  } = redux.calls.getSettings.data;
+  const footerProps = { email, phone, footer, social_media };
   return (
-    <>
+    <div style={{ overflow: "hidden" }}>
       <div className="header">
         {state < 700 ? <ResponsiveHeader /> : <Header />}
       </div>
       <div className="body">{children}</div>
       <div className="footer">
-        <Footer />
+        <Footer {...footerProps} />
       </div>
       <style jsx>{`
         .header {
@@ -61,7 +73,7 @@ const Layout = ({ children }: Props) => {
           }
         }
       `}</style>
-    </>
+    </div>
   );
 };
 

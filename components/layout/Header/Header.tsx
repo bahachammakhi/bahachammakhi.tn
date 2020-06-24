@@ -8,6 +8,7 @@ import Button from "../../ui/Button/Button";
 // import Logo from "./Logo";
 const Links = [
   { name: "Home", pathname: "/" },
+  { name: "Projects", pathname: "/projects" },
   { name: "Contact", pathname: "/contact" },
 ];
 const NavItems = (pathname) => {
@@ -25,7 +26,6 @@ const NavItems = (pathname) => {
 const Header = ({ match }: any) => {
   const [state, changestate] = useState(true);
   const router = useRouter();
-  console.log(router);
   return (
     <>
       <div className="wrapper">

@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import TextLoop from "react-text-loop";
 import { Colmun, Row, Title, Img, RowEdited } from "./styles";
-import reacticon from "../../../static/reactIcon.png";
-import firebaseicon from "../../../static/firebaseicon.png";
-import rn from "../../../static/rn.png";
-import redux from "../../../static/redux.png";
-import js from "../../../static/jsicon.jpg";
-import mongodb from "../../../static/mongodb.png";
-const imgs = [reacticon, firebaseicon, rn, redux, js, mongodb];
+
+const imgs = [
+  "/static/reactIcon.png",
+  "/static/firebaseicon.png",
+  "/static/rn.png",
+  "/static/redux.png",
+  "/static/jsicon.jpg",
+  "/static/mongodb.png",
+];
 
 const Technologies = () => {
   return (

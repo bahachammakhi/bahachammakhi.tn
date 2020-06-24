@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Link from "next/link";
 import {
   CardWrapper,
   CardContent,
@@ -38,14 +39,26 @@ const CardFront = ({ data, handleChange }: any) => {
       <CardContent>
         <Row>
           <Square>{data?.finished_at}</Square>
-          <Circle onClick={() => handleChange(true)}>
-            <NextArrow />
-            <NextArrow style={{ top: "-12px", right: "-15px" }} />
-          </Circle>
+          <Link
+            href={{
+              pathname: `/projects/${data?._id}`,
+            }}
+          >
+            <Circle
+            //  onClick={() => handleChange(true)}
+            >
+              <NextArrow />
+              <NextArrow style={{ top: "-12px", right: "-15px" }} />
+            </Circle>
+          </Link>
         </Row>
 
         <img
-          src={data?.cover?.url}
+          src={
+            data?.logo?.formats?.thumbnail?.url
+              ? data?.logo?.formats?.thumbnail?.url
+              : data?.logo?.url
+          }
           style={{
             position: "relative",
             zIndex: 0,
@@ -71,7 +84,7 @@ const CardBack = ({ data, handleChange }: any) => {
         <RowModi>
           {/* <Image src={data?.cover?.url} alt={data?.name} /> */}
           <img
-            src={data?.cover?.url}
+            src={data?.cover?.formats?.thumbnail?.url}
             style={{
               // position: "relative",
               // zIndex: 0,
@@ -118,11 +131,11 @@ const CardProject = ({ data }: Props) => {
 
   return (
     <div style={{ padding: "20px", paddingLeft: "0px" }}>
-      {change ? (
+      {/* {change ? (
         <CardBack data={data} handleChange={handleChange} />
-      ) : (
-        <CardFront data={data} handleChange={handleChange} />
-      )}
+      ) : ( */}
+      <CardFront data={data} handleChange={handleChange} />
+      {/* )} */}
     </div>
   );
 };

@@ -73,9 +73,9 @@ export const Button = styled.div<any>`
   }
 `;
 
-export const InterButtonOnHover = ({ children, link = "" }) => (
+export const InterButtonOnHover = ({ children, link = "", target = false }) => (
   <Button>
-    <a href={link}>
+    <a href={link} target={target ? "_blank" : ""}>
       <span>{children}</span>
     </a>
   </Button>
