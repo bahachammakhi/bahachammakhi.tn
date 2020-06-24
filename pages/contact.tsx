@@ -12,7 +12,11 @@ const ContactConatainer = () => {
       />
       <div className={"wrapper-contact-page"}>
         <div>
-          <img className="img1-contact-page" src={"/static/contact.jpg"} />
+          <img
+            className="img1-contact-page"
+            alt="contantImage"
+            src={"/static/contact.jpg"}
+          />
         </div>
         <div>
           <ContactForm />
