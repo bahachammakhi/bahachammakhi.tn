@@ -38,6 +38,6 @@ export async function getStaticPaths() {
   return {
     paths:
       projects?.data?.map((project: any) => `/projects/${project?._id}`) || [],
-    fallback: true,
+    fallback: false,
   };
 }
