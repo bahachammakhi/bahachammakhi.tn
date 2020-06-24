@@ -1,6 +1,6 @@
 # Baha chammakhi
 
-![Twitter URL](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2Fbahachammakhi) ![GitHub followers](https://img.shields.io/github/followers/bahachammakhi?style=social)
+![Twitter URL](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2Fbahachammakhi) [![Netlify Status](https://api.netlify.com/api/v1/badges/8d1aac50-c3aa-433b-964a-3a39b94a1b9e/deploy-status)](https://app.netlify.com/sites/bahachammakhiportfolio/deploys) ![GitHub followers](https://img.shields.io/github/followers/bahachammakhi?style=social)
 
 > Baha chammakhi is my personal portfolio 🧑‍💻
 
