@@ -25,7 +25,7 @@
 - [Typescript](https://www.typescriptlang.org/) TypeScript is a typed superset of JavaScript that compiles to plain JavaScript. 💻
 - [React](https://reactjs.org/) A JavaScript library for building user interfaces. 💻
 - [Nextjs](https://nextjs.org/) React js framework. 💻
-- [Styled-components](https://styled-components.com/) styled-components is the result of wondering how we could enhance CSS for styling React component systems.
+- [Styled-components](https://styled-components.com/) styled-components is the result of wondering how we could enhance CSS for styling React component systems.🧑‍💻
 
 ## Setup
 
@@ -81,10 +81,11 @@ List of features ready and TODOs for future development
 - Listing projects
 - Home animation
 - Details on projects
+- Contacting form
 
 To-do list:
 
-- Add blog
+- Add bloging system (On progress!)
 - Add opensource projects section
 - Cover Unit tests
 - Complete typescript typing

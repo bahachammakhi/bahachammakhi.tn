@@ -1,26 +1,26 @@
 import { Input, Button, notification } from "antd";
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import ButtonMine from "../../components/ui/Button/Button";
 // import form from "./../hoc/form";
 // import withApis from "../hoc/withApi";
 // import { CreateNewContact } from "./../requests/requests";
+import useForm from "../../hooks/useForm";
 import axios, { AxiosResponse } from "axios";
+import { Redux } from "../../pages/_app";
 const { TextArea } = Input;
 
-const ContactForm = ({
-  values,
-  handleChange,
-  CreateNewContact,
-  clearValues,
-}: any) => {
+const ContactForm = () => {
+  const state = useContext(Redux);
+  const { postContact } = state.calls;
+  const initialValues = {
+    email: "",
+    fullname: "",
+    message: "",
+  };
   const handleClick = () => {
-    if (
-      values.email !== "" &&
-      values.fullname !== "" &&
-      values.message !== ""
-    ) {
-      // CreateNewContact.call(values);
-      clearValues();
+    if (form.email !== "" && form.fullname !== "" && form.message !== "") {
+      postContact.call(form);
+      // clearValues();
     } else {
       notification.error({
         message: "Validation",
@@ -28,28 +28,22 @@ const ContactForm = ({
       });
     }
   };
-  // useEffect(
-  //   () => {
-  //     if (CreateNewContact.data.status === "success") {
-  //       let name = "";
+  const { handleChange, handleReset, form } = useForm<typeof initialValues>({
+    initialValues,
+  });
 
-  //       if (
-  //         CreateNewContact &&
-  //         CreateNewContact.data &&
-  //         CreateNewContact.contact &&
-  //         CreateNewContact.contact.fullname
-  //       ) {
-  //         name = CreateNewContact.data.contact.fullname;
-  //       }
-  //       notification.success({
-  //         message: `Message sended successfully on ${CreateNewContact.data.time} !`,
-  //         description: `Thanks ${name} for your message I will contact you sooner i read it`,
-  //       });
-  //     }
-  //   },
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  //   [CreateNewContact.data.status === "success"]
-  // );
+  useEffect(
+    () => {
+      if (postContact?.success) {
+        notification.success({
+          message: `Message sended successfully on ${postContact?.data?.createdAt} !`,
+          description: `Thanks ${postContact?.data?.fullname} for your message I will contact you sooner i read it`,
+        });
+      }
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [postContact?.success]
+  );
   return (
     <div>
       <div className="input-contact-form ">
@@ -58,7 +52,7 @@ const ContactForm = ({
           name="fullname"
           placeholder="Full name"
           allowClear={true}
-          // value={values.fullname}
+          value={form.fullname}
         />
       </div>
       <div className="input-contact-form ">
@@ -67,7 +61,7 @@ const ContactForm = ({
           placeholder="Email"
           onChange={handleChange}
           allowClear={true}
-          // value={values.email}
+          value={form.email}
         />
       </div>
       <div>
@@ -76,23 +70,23 @@ const ContactForm = ({
           name="message"
           placeholder="Your message"
           rows={4}
-          // value={values.message}
+          value={form.message}
         />
       </div>
-      {/* <div
+      <div
         onClick={() => {
           handleClick();
         }}
         className="button-contact-form"
-      > */}
-      <ButtonMine
-        content="Send"
-        width="120px"
-        height="50px"
-        path={"baha"}
-        executed={true}
-      />
-      {/* </div> */}
+      >
+        <ButtonMine
+          content="Send"
+          width="120px"
+          height="50px"
+          path={"baha"}
+          executed={true}
+        />
+      </div>
       <style jsx>
         {`
           .input-contact-form {
@@ -118,8 +112,4 @@ const ContactForm = ({
     </div>
   );
 };
-
-// export default withApis({ CreateNewContact })(
-//   form(ContactForm, { initialValues: { email: "", name: "", message: "" } })
-// );
 export default ContactForm;
