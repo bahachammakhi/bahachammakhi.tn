@@ -59,7 +59,7 @@ const ArticleCard = ({ title, content, image, published_at }: any) => {
         <Meta
           description={
             <Paragraph ellipsis={{ rows: 8, expandable: false }}>
-              {content.slice(100, 100)}....
+              {content.slice(0, 10)}....
             </Paragraph>
           }
         />
