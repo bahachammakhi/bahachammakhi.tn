@@ -9,6 +9,7 @@ import Button from "../../ui/Button/Button";
 const Links = [
   { name: "Home", pathname: "/" },
   { name: "Projects", pathname: "/projects" },
+  { name: "Articles", pathname: "/articles" },
   { name: "Contact", pathname: "/contact" },
 ];
 const NavItems = (pathname) => {

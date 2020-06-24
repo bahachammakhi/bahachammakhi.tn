@@ -50,7 +50,7 @@ const ResponsiveHeader = ({ match }: any) => {
             <SideNav
               matche={match}
               setOpen={setOpened}
-              navitems={["Home", "Projects", "Contact"]}
+              navitems={["Home", "Projects", "Articles", "Contact"]}
             />{" "}
           </div>
         ) : (

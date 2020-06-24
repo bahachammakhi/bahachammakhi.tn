@@ -1,10 +1,10 @@
 import axios, { AxiosResponse } from "axios";
 
-const BaseURL = "https://strapi-bahachammakhi.herokuapp.com/";
-// const BaseURL =
-//   process.env.NODE_ENV === "development"
-//     ? process.env.BASE_URL_STRAPIDEV
-//     : process.env.BASE_URL;
+// const BaseURL = "https://strapi-bahachammakhi.herokuapp.com/";
+const BaseURL =
+  process.env.NODE_ENV === "development"
+    ? process.env.BASE_URL_STRAPIDEV
+    : process.env.BASE_URL;
 
 export let authorizationBearer: string | null = null;
 
@@ -69,9 +69,11 @@ export function axiosPost<T, P extends object>(
     data: {},
     headers: {},
   };
-
+  console.log("Params", params);
   if (params) {
+    console.log("PBefore", p);
     p = { ...p, ...params };
+    console.log("PAfter", p);
   }
 
   const { headers } = p;
@@ -82,7 +84,7 @@ export function axiosPost<T, P extends object>(
   if (timeout) {
     reqParams.timeout = timeout;
   }
-
+  console.log("ReqParams", reqParams);
   return axiosRequest("POST", BaseURL, url, reqParams, headers);
 }
 

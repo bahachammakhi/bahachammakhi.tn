@@ -19,9 +19,10 @@
     "next-seo": "^4.5.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "react-driftjs": "^1.1.11",
     "react-items-carousel": "^2.8.0",
+    "react-markdown": "^4.3.1",
     "react-messenger-customer-chat": "^0.7.2",
+    "react-moment": "^0.9.7",
     "react-text-loop": "^2.3.0",
     "react-typing-animation": "^1.6.2",
     "styled-components": "^5.1.1"
@@ -30,12 +31,5 @@
     "@types/node": "^14.0.13",
     "@types/react": "^16.9.36",
     "typescript": "^3.9.5"
-  },
-  "bit": {
-    "env": {
-      "compiler": "bit.envs/compilers/react-typescript@3.1.53"
-    },
-    "componentsDefaultDirectory": "components/{name}",
-    "packageManager": "npm"
   }
 }
