@@ -12,7 +12,7 @@ function imageRenderer({ src, ...props }) {
   const match = imageSizeRegex.exec(src);
 
   if (!match) {
-    return <img src={src} {...props} />;
+    return <img src={src} alt="RendredPicture" {...props} />;
   }
 
   const [width, height] = match[1]
