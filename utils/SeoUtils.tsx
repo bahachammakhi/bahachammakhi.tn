@@ -147,12 +147,12 @@ const HeadSEO = () => {
       />
       <meta name="twitter:creator" content="@DavidWShadow" />
       <meta property="og:type" content="website" />
-      <meta property="og:title" content="PWA App" />
+      <meta property="og:title" content="Baha chammakhi-Fullstack Javascript Developer" />
       <meta
         property="og:description"
         content="I am a motivated Fullstack js developer mainly working with the MERN stack always trying to ensurebest practices to keep my code clean. Dont hesitate to contact me to bring your project to live !"
       />
-      <meta property="og:site_name" content="PWA App" />
+      <meta property="og:site_name" content="Baha chammakhi-Fullstack Javascript Developer" />
       <meta property="og:url" content="https://bahachammakhi.tn" />
       <meta
         property="og:image"
