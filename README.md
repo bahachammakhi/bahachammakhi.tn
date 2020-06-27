@@ -92,6 +92,7 @@ To-do list:
 - Cover Unit tests
 - Complete typescript typing
 - Refactoring
+- Edit blog design
 
 ## Folder-Structure
 
