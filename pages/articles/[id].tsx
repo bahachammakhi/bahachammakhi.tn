@@ -4,6 +4,7 @@ import { getArticle, getArticles } from "../../requests/requests";
 import styled from "styled-components";
 import Layout from "../../components/layout/PortfolioLayout/Layout";
 import Head from "next/head";
+import CodeBlock from "../../utils/CodeBlock";
 
 const Image = styled.img`
   width: ${(props) => props.width};
@@ -48,6 +49,7 @@ function imageRenderer({ src, ...props }) {
 const Article = ({ article }) => {
   const renderers = {};
   renderers["image"] = imageRenderer;
+  renderers["code"] = CodeBlock;
   return (
     <Layout>
       <Head>

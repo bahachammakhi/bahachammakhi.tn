@@ -1,9 +1,21 @@
 import React, { useContext, useEffect } from "react";
 import Head from "next/head";
+import dynamic from "next/dynamic";
 import Layout from "../components/layout/PortfolioLayout/Layout";
 import HomeContainer from "../container/HomeContainer/HomeContainer";
 import { Redux } from "./_app";
 import { NextSeo } from "next-seo";
+// const Layout = dynamic(
+//   () => import("../components/layout/PortfolioLayout/Layout"),
+//   {
+//     ssr: false,
+//     loading: () => <div>Loading</div>,
+//   }
+// );
+// const HomeContainer = dynamic(
+//   () => import("../container/HomeContainer/HomeContainer"),
+//   { ssr: false, loading: () => <div>Loading</div> }
+// );
 
 export default function Home() {
   const state = useContext(Redux);
