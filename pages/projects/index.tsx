@@ -6,7 +6,7 @@ import Head from "next/head";
 
 const Projects = ({ projects }) => {
   return (
-    <Layout>
+    <>
       <div style={{ marginTop: "3%" }}>
         <Head>
           <title>Baha chammakhi-Projects</title>
@@ -26,7 +26,10 @@ const Projects = ({ projects }) => {
         >
           {projects?.length > 0 ? (
             projects?.map((el: any, index: any) => (
-              <div key={index} data-aos="fade-left">
+              <div
+                id="projects"
+                style={{ display: "flex", flexWrap: "wrap", marginTop: "5%" }}
+              >
                 <CardProject data={el} />
               </div>
             ))
@@ -48,7 +51,7 @@ const Projects = ({ projects }) => {
           }
         `}
       </style>
-    </Layout>
+    </>
   );
 };
 

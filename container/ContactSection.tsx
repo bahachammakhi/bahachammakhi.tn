@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import ContactForm from "./ContactForm/ContactForm";
-import InterButton from "../components/ui/InterButton/InterButton";
+import { InterButtonOnHover } from "../components/ui/Inter2Button/Inter2Button";
 import styled, { css, keyframes } from "styled-components";
 const Start = css`
   left: -450px;
@@ -31,7 +31,7 @@ export const Img = styled.img<any>`
   }
 `;
 export const SectionWrapper = styled.div<any>`
-  overflow: hidden;
+  /* overflow: hidden; */
   display: flex;
   position: relative;
   transition: left 3s;
@@ -60,11 +60,11 @@ export const ButtonDiss = styled.div<any>`
 const ContactSection = () => {
   const [start, handleStart] = useState(false);
   return (
-    <SectionWrapper start={false}>
+    <SectionWrapper start={start}>
       <ContactForm />
-      <Img src={"/static/artcontact.jpg"} alt="art" />
+      <Img src={"/static/svg/tasks.svg"} alt="art" />
       <ButtonDiss onClick={() => handleStart(true)} start={start}>
-        <InterButton />
+        <InterButtonOnHover link="#contact">Contact</InterButtonOnHover>
       </ButtonDiss>
     </SectionWrapper>
   );

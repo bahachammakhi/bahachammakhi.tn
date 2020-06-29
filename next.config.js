@@ -17,6 +17,7 @@ module.exports = withImages(
       env: {
         ENVIRONMENT: process.env.ENVIRONMENT,
         NAME: "Baha eddine Chammakhi",
+        // BASE_URL_STRAPIDEV: "https://bahadevchammakhi.mybluemix.net/",
         BASE_URL_STRAPIDEV: "http://localhost:1337",
         BASE_URL: "https://strapi-bahachammakhi.herokuapp.com/",
       },

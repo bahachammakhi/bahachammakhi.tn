@@ -4,7 +4,7 @@ import { Row, Col } from "antd";
 import ArticleCard from "../ArticleCard/Card";
 
 const ArticlesGrid = ({ data }) => {
-  const ArticlesElements = data.map((article) => {
+  const ArticlesElements = data?.map((article: any) => {
     return (
       <Link href={`/articles/${article._id}`}>
         <Col

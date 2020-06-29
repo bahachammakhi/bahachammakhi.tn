@@ -1,11 +1,17 @@
 import React from "react";
-import ContactForm from "../container/ContactForm/ContactForm";
-import Layout from "../components/layout/PortfolioLayout/Layout";
+import dynamic from "next/dynamic";
+// import ContactForm from "../container/ContactForm/ContactForm";
+import Preloader from "../components/ui/Preloader/Preloader";
+
+const ContactForm = dynamic(
+  () => import("../container/ContactForm/ContactForm"),
+  { ssr: false, loading: () => <Preloader /> }
+);
 import { NextSeo } from "next-seo";
 
 const ContactConatainer = () => {
   return (
-    <Layout>
+    <>
       <NextSeo
         title="Baha chammakhi-Fullstack JS- Contact"
         description="I am a motivated Fullstack js developer mainly working with the MERN stack always trying to ensurebest practices to keep my code clean. Dont hesitate to contact me to bring your project to live !"
@@ -42,7 +48,7 @@ const ContactConatainer = () => {
           `}
         </style>
       </div>
-    </Layout>
+    </>
   );
 };
 export default ContactConatainer;

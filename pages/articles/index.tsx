@@ -6,7 +6,7 @@ import Head from "next/head";
 
 const Articles = ({ articles }) => {
   return (
-    <Layout>
+    <>
       <Head>
         <title>Baha chammakhi-Articles</title>
         <meta
@@ -20,7 +20,7 @@ const Articles = ({ articles }) => {
       </Head>
       <h1>Articles:</h1>
       <ArticlesGrid data={articles} />
-    </Layout>
+    </>
   );
 };
 

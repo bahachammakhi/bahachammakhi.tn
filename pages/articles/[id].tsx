@@ -51,7 +51,7 @@ const Article = ({ article }) => {
   renderers["image"] = imageRenderer;
   renderers["code"] = CodeBlock;
   return (
-    <Layout>
+    <>
       <Head>
         <title>Baha chammakhi-{article?.title}</title>
         <meta name="description" content={article?.preview}></meta>
@@ -83,7 +83,7 @@ const Article = ({ article }) => {
           </div>
         </div>
       </Wrap>
-    </Layout>
+    </>
   );
 };
 

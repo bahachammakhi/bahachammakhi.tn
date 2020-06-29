@@ -10,7 +10,7 @@ import Head from "next/head";
 
 const Project = ({ data, context, projects }) => {
   return (
-    <Layout>
+    <>
       <Head>
         <title>Baha chammakhi-{data?.slug}</title>
         <meta name="description" content={data?.description}></meta>
@@ -20,7 +20,7 @@ const Project = ({ data, context, projects }) => {
         ></meta>
       </Head>
       <ProjectContainer projects={projects} data={data} />
-    </Layout>
+    </>
   );
 };
 
