@@ -2,14 +2,17 @@ import React from "react";
 
 const Preloader = () => {
   return (
-    <div id="preload">
-      <div className="sk-folding-cube">
-        <div className="sk-cube1 sk-cube"></div>
-        <div className="sk-cube2 sk-cube"></div>
-        <div className="sk-cube4 sk-cube"></div>
-        <div className="sk-cube3 sk-cube"></div>
+    <div>
+      {/* <img src="/static/nobglogo.png" alt="Logo" /> */}
+      <div id="preload">
+        <div className="sk-folding-cube">
+          <div className="sk-cube1 sk-cube"></div>
+          <div className="sk-cube2 sk-cube"></div>
+          <div className="sk-cube4 sk-cube"></div>
+          <div className="sk-cube3 sk-cube"></div>
+        </div>
       </div>
-      <style jsx>{`
+      <style jsx global>{`
         body {
           overflow-x: hidden;
           @import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");

@@ -2,7 +2,13 @@ import React from "react";
 import dynamic from "next/dynamic";
 // import ContactForm from "../container/ContactForm/ContactForm";
 import Preloader from "../components/ui/Preloader/Preloader";
-
+const Layout = dynamic(
+  () => import("../components/layout/PortfolioLayout/Layout"),
+  {
+    ssr: false,
+    loading: () => <Preloader />,
+  }
+);
 const ContactForm = dynamic(
   () => import("../container/ContactForm/ContactForm"),
   { ssr: false, loading: () => <Preloader /> }

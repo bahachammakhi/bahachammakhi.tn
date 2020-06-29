@@ -1,4 +1,5 @@
 // pages/404.js
+
 export default function Custom404() {
   return (
     <div style={{ margin: "50px", display: "flex", flexDirection: "column" }}>
@@ -10,6 +11,7 @@ export default function Custom404() {
           textAlign: "center",
           justifyContent: "center",
         }}
+        alt="404"
         src="/static/svg/404.svg"
       />
       <h1 style={{ textAlign: "center" }}>

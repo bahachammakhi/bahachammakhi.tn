@@ -4,7 +4,13 @@ import dynamic from "next/dynamic";
 import { Redux } from "./_app";
 import { NextSeo } from "next-seo";
 import Preloader from "../components/ui/Preloader/Preloader";
-
+const Layout = dynamic(
+  () => import("../components/layout/PortfolioLayout/Layout"),
+  {
+    ssr: false,
+    loading: () => <Preloader />,
+  }
+);
 const HomeContainer = dynamic(
   () => import("../container/HomeContainer/HomeContainer"),
   { ssr: false, loading: () => <Preloader /> }

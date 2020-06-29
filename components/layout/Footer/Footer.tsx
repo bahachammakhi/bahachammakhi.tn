@@ -8,7 +8,7 @@ const SocialMedia = (logos: any) => {
     logos?.map((element: any) => {
       return (
         <Icon href={element.link} target="_blank">
-          <Img src={`/static/social/${element.name}.svg`} />
+          <Img alt="logo" src={`/static/social/${element.name}.svg`} />
         </Icon>
       );
     })
