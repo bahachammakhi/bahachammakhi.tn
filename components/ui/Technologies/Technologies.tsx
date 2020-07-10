@@ -15,7 +15,7 @@ const Technologies = () => {
   return (
     <RowEdited>
       <div>
-        Specialized in JavaScript with over a year of experience in building the
+        Specialized in JavaScript with over a two years of experience in building the
         web and working with technologies like
         <TextLoop springConfig={{ stiffness: 180, damping: 8 }}>
           <Row>
