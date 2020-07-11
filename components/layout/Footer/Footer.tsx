@@ -2,7 +2,7 @@ import React from "react";
 import Button from "../../ui/Button/Button";
 import { Wrapper, Copyrigth, Logo, Writing, Icon, Row, Img } from "./style";
 
-const SocialMedia = (logos: any) => {
+export const SocialMedia = (logos: any) => {
   console.log("logos", logos);
   return logos.length > 0 ? (
     logos?.map((element: any) => {

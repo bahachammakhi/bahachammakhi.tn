@@ -40,7 +40,7 @@ const Layout = ({ children }: Props) => {
   return (
     <div style={{ overflow: "hidden" }}>
       <div className="header">
-        {state < 700 ? <ResponsiveHeader /> : <Header />}
+        {state < 700 ? <ResponsiveHeader social={social} /> : <Header />}
       </div>
       <div className="body">{children}</div>
       <div className="footer">

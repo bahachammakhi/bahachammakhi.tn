@@ -8,8 +8,8 @@ const ArticlesGrid = ({ data }) => {
     return (
       <Link href={`/articles/${article._id}`}>
         <Col
-          xs={{ span: 22, offset: 2 }}
-          sm={{ span: 22, offset: 2 }}
+          xs={{ span: 22, offset: 1 }}
+          sm={{ span: 22, offset: 1 }}
           md={{ span: 8, offset: 1 }}
           lg={{ span: 6, offset: 2 }}
           xl={{ span: 6, offset: 2 }}

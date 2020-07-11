@@ -3,22 +3,22 @@ import Layout from "../../components/layout/PortfolioLayout/Layout";
 import { getProjects } from "../../requests/requests";
 import CardProject from "../../components/ui/CardProject/CardProject";
 import Head from "next/head";
+import SEO from "../../utils/SeoUtils";
 
 const Projects = ({ projects }) => {
   return (
     <>
+      <SEO
+        title={`Bahachammakhi- Projects`}
+        description={"List of Projects Baha chammakhi Contributed on"}
+        language="en-us"
+        image={"/static/logo.png"}
+        pageUrl={`https://www.bahachammakhi.com/projects/`}
+        keywords={
+          "`blogs, articles,Javascript,Code,Programming,Baha ,chammakhi, Portfolio, bahachammakhi, devops,arcitecture,tunisia,developer,nodejs,typescript"
+        }
+      />
       <div style={{ marginTop: "3%" }}>
-        <Head>
-          <title>Baha chammakhi-Projects</title>
-          <meta
-            name="description"
-            content="List of Projects Baha chammakhi Contributed on"
-          ></meta>
-          <meta
-            name="keywords"
-            content={`blogs, articles,Javascript,Code,Programming,Baha ,chammakhi, Portfolio, bahachammakhi, devops,arcitecture,tunisia,developer,nodejs,typescript`}
-          ></meta>
-        </Head>
         <span className="title">Services:</span>
         <div
           id="projects"
@@ -38,7 +38,6 @@ const Projects = ({ projects }) => {
           )}
         </div>
       </div>
-
       <style jsx>
         {`
           .title {

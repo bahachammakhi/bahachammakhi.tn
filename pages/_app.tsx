@@ -22,8 +22,7 @@ import {
 const MessengerCustomerChat = dynamic(() => import("../utils/MessangerChat"), {
   ssr: false,
 });
-import SEO, { DEFAULT_SEO } from "../utils/SeoUtils";
-import { DefaultSeo } from "next-seo";
+
 import { useApiRequest } from "../hooks/useApi";
 export interface callsType {
   getPeople: useApiRequest;
@@ -55,12 +54,10 @@ const MyApp = ({ Component, pageProps }: any): any => {
           color="#2a878f"
           options={{ easing: "ease", speed: 500 }}
         />
-        <SEO />
         <MessengerCustomerChat
           pageId="714175575683300"
           appId="272738577387387"
         />
-        <DefaultSeo {...DEFAULT_SEO} />
       </Layout>
       <style global jsx>
         {`

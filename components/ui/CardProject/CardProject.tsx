@@ -16,6 +16,7 @@ import {
   RowModi,
   Column,
   IconLink,
+  CardWrapperGlobal,
 } from "./style";
 // import contentLoading from "../../hoc/contentLoading";
 
@@ -130,13 +131,13 @@ const CardProject = ({ data }: Props) => {
   const [change, handleChange] = useState(false);
 
   return (
-    <div style={{ padding: "20px", paddingLeft: "0px" }}>
+    <CardWrapperGlobal>
       {/* {change ? (
         <CardBack data={data} handleChange={handleChange} />
       ) : ( */}
       <CardFront data={data} handleChange={handleChange} />
       {/* )} */}
-    </div>
+    </CardWrapperGlobal>
   );
 };
 // export default contentLoading(false)(CardProject);

@@ -38,7 +38,7 @@ const SideNav = ({ navitems, matche, setOpen }: any) => {
   return (
     <Wrapper>
       <Logo
-        src="/static/default-monochrome-black.svg"
+        src="/static/svg/default-monochrome-black.svg"
         width="200px"
         height="200px"
       />

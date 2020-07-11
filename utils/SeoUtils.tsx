@@ -40,53 +40,40 @@ function setDrif() {
   };
 }
 export const DEFAULT_SEO = {
-  titleTemplate: "Baha chammakhi-Fullstack Javascript Developer",
   title: "Baha chammakhi-Fullstack Javascript Developer",
   description:
     "I am a motivated Fullstack js developer mainly working with the MERN stack always trying to ensurebest practices to keep my code clean. Dont hesitate to contact me to bring your project to live !",
-  openGraph: {
-    type: "website",
-    locale: "en_IE",
-    url: "https://www.bahachammakhi.tn",
-    title: "Baha chammakhi-Fullstack Javascript Developer",
-    description:
-      "I am a motivated Fullstack js developer mainly working with the MERN stack always trying to ensurebest practices to keep my code clean. Dont hesitate to contact me to bring your project to live !",
-    image:
-      "https://prismic-io.s3.amazonaws.com/gary-blog%2F3297f290-a885-4cc6-9b19-3235e3026646_default.jpg",
-    site_name: "Bahachammakhi",
-    imageWidth: 1200,
-    imageHeight: 1200,
-    profile: {
-      firstname: "Baha eddine",
-      lastname: "Chammakhi",
-      username: "bahachammakhi",
-      gender: "male",
-    },
-  },
-  twitter: {
-    handle: "@garmeeh",
-    cardType: "summary_large_image",
-  },
+  language: "en-tn",
+  pageUrl: "https://www.bahachammakhi.tn",
+  image: "/static/default-monochrome-black.svg",
+  keywords:
+    "Baha chammakhi bahachammakhi bahaeddinnechammakhi fullstackdeveloper",
 };
-const HeadSEO = () => {
+const HeadSEO = ({
+  keywords,
+  title,
+  description,
+  language,
+  pageUrl,
+  image,
+}: any = DEFAULT_SEO) => {
   return (
     <Head>
       <meta
-        name="keywords"
-        content="bahachammakhi baha chammakhi developer tunisian tunisia tunisien portfolio JS javascript js fullstack frontend backend devops docker react nodejs vuejs angular firebase mongodb strapi "
+        name="viewport"
+        content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=yes, viewport-fit=cover"
       />
+      <meta name="keywords" content={keywords} />
       <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-      <meta name="application-name" content="Baha chammakhi Fullstackjs" />
+      <meta name="application-name" content={title} />
       <meta name="apple-mobile-web-app-capable" content="yes" />
       <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-      <meta
-        name="apple-mobile-web-app-title"
-        content="Baha chammakhi-Fullstack Javascript Developer"
-      />
-      <meta
-        name="description"
-        content="I am a motivated Fullstack js developer mainly working with the MERN stack always trying to ensurebest practices to keep my code clean. Dont hesitate to contact me to bring your project to live !"
-      />
+      <meta name="apple-mobile-web-app-title" content={title} />
+      <meta name="description" content={description} />
+      <meta name="robots" content="index,follow" />
+      <meta name="googlebot" content="index,follow" />
+      <meta name="subject" content={description} />
+      <meta name="rating" content="General" />
       <meta name="format-detection" content="telephone=no" />
       <meta name="mobile-web-app-capable" content="yes" />
       <meta
@@ -96,10 +83,6 @@ const HeadSEO = () => {
       <meta name="msapplication-TileColor" content="#2B5797" />
       <meta name="msapplication-tap-highlight" content="no" />
       <meta name="theme-color" content="#000000" />
-      <meta
-        name="viewport"
-        content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=yes, viewport-fit=cover"
-      />
 
       <link
         rel="apple-touch-icon"
@@ -129,35 +112,29 @@ const HeadSEO = () => {
         rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"
       />
-      <link href="static/manifest.json" rel="manifest"></link>
-
-      <meta name="twitter:card" content="summary" />
-      <meta name="twitter:url" content="https://bahachammakhi.tn" />
-      <meta
-        name="twitter:title"
-        content="Baha chammakhi-Fullstack Javascript Developer"
-      />
-      <meta
-        name="twitter:description"
-        content="I am a motivated Fullstack js developer mainly working with the MERN stack always trying to ensurebest practices to keep my code clean. Dont hesitate to contact me to bring your project to live !"
-      />
-      <meta
-        name="twitter:image"
-        content="https://bahachammakhi.tn/static/icons/android-chrome-192x192.png"
-      />
-      <meta name="twitter:creator" content="@DavidWShadow" />
+      <meta name="twitter:card" content={description} />
+      <meta name="twitter:site" content="@bahachammakhi" />
+      <meta name="twitter:creator" content="@bahachammakhi" />
+      <meta name="twitter:url" content={pageUrl} />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={image} />
+      <meta name="twitter:image:alt" content={description} />
+      <meta property="fb:app_id" content="bahadevchammakhi" />
+      <meta property="og:url" content={pageUrl} />
       <meta property="og:type" content="website" />
-      <meta property="og:title" content="Baha chammakhi-Fullstack Javascript Developer" />
+      <meta property="og:title" content={title} />
+      <meta property="og:image" content={image} />
+      <meta property="og:image:alt" content={description} />
+      <meta property="og:description" content={description} />
+      <meta property="og:site_name" content={title} />
+      <meta property="og:locale" content={language} />
       <meta
-        property="og:description"
-        content="I am a motivated Fullstack js developer mainly working with the MERN stack always trying to ensurebest practices to keep my code clean. Dont hesitate to contact me to bring your project to live !"
+        property="article:author"
+        content="Baha eddine chammakhi"
+        key="article-author"
       />
-      <meta property="og:site_name" content="Baha chammakhi-Fullstack Javascript Developer" />
-      <meta property="og:url" content="https://bahachammakhi.tn" />
-      <meta
-        property="og:image"
-        content="https://bahachammakhi.tn/static/icons/apple-touch-icon.png"
-      />
+      <title>{title}</title>
       <script
         async
         defer
@@ -167,7 +144,6 @@ const HeadSEO = () => {
         async
         src="https://www.googletagmanager.com/gtag/js?id=UA-139163951-3"
       ></script>
-      {/* <script dangerouslySetInnerHTML={setDrif()} /> */}
       <script dangerouslySetInnerHTML={setGoogleTags()} />
     </Head>
   );
