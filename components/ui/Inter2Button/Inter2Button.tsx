@@ -72,7 +72,9 @@ export const Button = styled.div<any>`
     }
   }
 `;
-
+export const ButtonAnimationWithoutLink = ({ children }) => {
+  return <Button>{children}</Button>;
+};
 export const InterButtonOnHover = ({ children, link = "", target = false }) => (
   <Button>
     <a href={link} target={target ? "_blank" : ""}>

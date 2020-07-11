@@ -76,6 +76,12 @@ const HomeContainer: React.FC<any> = ({ redux }: Props) => {
           <p>I help Customers beautifully build their Solutions. </p>
         </div>
       </div>
+      <MobileUxPic
+        src="/static/mobile_ux.svg"
+        alt="mobile_ux"
+        width="200px"
+        zindex={1}
+      />
       <div className={` animated shake Technologies`}>
         <Technologies />
       </div>
@@ -107,14 +113,8 @@ const HomeContainer: React.FC<any> = ({ redux }: Props) => {
 
       <div className="services" style={{ display: "flex" }}>
         <Services />
-        <MobileUxPic
-          src="/static/mobile_ux.svg"
-          alt="mobile_ux"
-          width="500px"
-          zindex={1}
-        />
       </div>
-      <div className="process">
+      <div className="process" style={{ paddingTop: "20px" }}>
         <DevProccess />
       </div>
       <h1>Projects:</h1>
@@ -180,6 +180,11 @@ const HomeContainer: React.FC<any> = ({ redux }: Props) => {
           }
           .process {
             margin: 50px;
+          }
+          @media screen and (max-width: 780px) {
+            .process {
+              margin: 0px;
+            }
           }
           .buttons {
             display: inline-flex;

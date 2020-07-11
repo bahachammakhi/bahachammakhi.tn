@@ -15,3 +15,5 @@ export const getProject = (id: string): Promise<Response<any>> =>
 export const getSettings = (): Promise<Response<any>> => axiosGet("/settings");
 export const postContact = (data: any): Promise<Response<any>> =>
   axiosPost("/contacts", { data });
+export const getSocial = (): Promise<Response<any>> =>
+  axiosGet("/social-medias");

@@ -69,11 +69,9 @@ export function axiosPost<T, P extends object>(
     data: {},
     headers: {},
   };
-  console.log("Params", params);
+
   if (params) {
-    console.log("PBefore", p);
     p = { ...p, ...params };
-    console.log("PAfter", p);
   }
 
   const { headers } = p;
@@ -84,7 +82,7 @@ export function axiosPost<T, P extends object>(
   if (timeout) {
     reqParams.timeout = timeout;
   }
-  console.log("ReqParams", reqParams);
+
   return axiosRequest("POST", BaseURL, url, reqParams, headers);
 }
 

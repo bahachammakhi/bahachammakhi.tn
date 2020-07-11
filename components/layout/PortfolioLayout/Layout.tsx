@@ -25,6 +25,7 @@ const Layout = ({ children }: Props) => {
       setState(600);
     }
     redux.calls.getSettings.call();
+    redux.calls.getSocial.call();
   });
   const {
     email,
@@ -34,11 +35,12 @@ const Layout = ({ children }: Props) => {
     social_media,
     uptowork,
   } = redux.calls.getSettings.data;
-  const footerProps = { email, phone, footer, social_media };
+  const social = redux.calls.getSocial.data;
+  const footerProps = { email, phone, footer, social_media, social };
   return (
     <div style={{ overflow: "hidden" }}>
       <div className="header">
-        {state < 700 ? <ResponsiveHeader /> : <Header />}
+        {state < 700 ? <ResponsiveHeader social={social} /> : <Header />}
       </div>
       <div className="body">{children}</div>
       <div className="footer">

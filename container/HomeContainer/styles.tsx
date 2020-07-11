@@ -25,6 +25,7 @@ export const MobileUxPic = styled.img<any>`
   width: ${(props) => props.width};
   z-index: ${(props) => props.zindex};
   overflow-x: hidden;
+  margin-left: 50px;
   @media screen and (min-width: 1200px) {
     display: none;
   }

@@ -109,7 +109,6 @@ class MessengerChat extends Component<any, any> {
       });
 
       this.setState({ fbLoaded: true });
-      console.log("Init FB");
     };
   }
 

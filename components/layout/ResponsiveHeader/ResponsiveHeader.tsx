@@ -5,7 +5,7 @@ import { RightSquareOutlined } from "@ant-design/icons";
 import SideNav from "../SideNav/SideNav";
 import { Nav, SideNav as SidenavWrapper, Icons, Logo } from "./styles";
 
-const ResponsiveHeader = ({ match }: any) => {
+const ResponsiveHeader = ({ match, social }: any) => {
   const [opened, setOpened] = useState(false);
   return (
     <>
@@ -21,32 +21,27 @@ const ResponsiveHeader = ({ match }: any) => {
           }}
         />
         <Icons>
-          {/* <a href="www.facebook.com/bahachammakhi2" target="_blank">
-            <Icon
-              type="facebook"
-              style={{ color: "black", cursor: "pointer" }}
-            />
-          </a>
-          <a href="https://github.com/bahachammakhi" target="_blank">
-            <Icon
-              type="github"
-              style={{ paddingLeft: "10px", color: "black", cursor: "pointer" }}
-            />
-          </a>
-          <a href="https://www.instagram.com/bahachammakhi/" target="_blank">
-            <Icon
-              type="instagram"
-              style={{ paddingLeft: "10px", color: "black", cursor: "pointer" }}
-            />
-          </a> */}
+          {social.length > 0 ? (
+            social?.map((element) => {
+              return (
+                <a rel="noreferrer" href={element?.link}>
+                  <Logo
+                    width="30px"
+                    style={{ marginRight: "15px", cursor: "pointer" }}
+                    alt="logo"
+                    src={`/static/social/${element?.name}-original.svg`}
+                  />
+                </a>
+              );
+            })
+          ) : (
+            <></>
+          )}
         </Icons>
       </Nav>
       <SidenavWrapper>
         {opened ? (
-          <div
-            style={{ height: "700px", zIndex: 50000 }}
-            className=" sidenav animated slideInLeft"
-          >
+          <div style={{ height: "700px", zIndex: 50000, position: "static" }}>
             <SideNav
               matche={match}
               setOpen={setOpened}

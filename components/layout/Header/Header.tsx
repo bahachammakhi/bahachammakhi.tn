@@ -34,7 +34,7 @@ const Header = ({ match }: any) => {
         Baha chammakhi
         </div> */}
         <img
-          src="/static/default-monochrome-black.svg"
+          src="/static/svg/default-monochrome-black.svg"
           className="logo"
           width="300px"
           style={{ top: "-100px", position: "relative" }}

@@ -21,6 +21,7 @@
     "next-images": "^1.4.0",
     "next-pwa": "^2.6.0",
     "next-seo": "^4.5.0",
+    "nextjs-progressbar": "^0.0.5",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-items-carousel": "^2.8.0",

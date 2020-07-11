@@ -8,7 +8,7 @@ const navlinks = (navitems: any, router: any) =>
   navitems.map((item: String) => {
     const path =
       item === "Home" ? "/" : item.charAt(0).toLowerCase() + item.substring(1);
-    console.log("item", path);
+
     return router.pathname === `/${path}` ||
       (router.pathname === "/" && item === "Home") ? (
       <NavItem
@@ -38,7 +38,7 @@ const SideNav = ({ navitems, matche, setOpen }: any) => {
   return (
     <Wrapper>
       <Logo
-        src="/static/default-monochrome-black.svg"
+        src="/static/svg/default-monochrome-black.svg"
         width="200px"
         height="200px"
       />

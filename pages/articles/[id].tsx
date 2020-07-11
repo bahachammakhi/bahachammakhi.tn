@@ -5,6 +5,7 @@ import styled from "styled-components";
 import Layout from "../../components/layout/PortfolioLayout/Layout";
 import Head from "next/head";
 import CodeBlock from "../../utils/CodeBlock";
+import SEO from "../../utils/SeoUtils";
 
 const Image = styled.img`
   width: ${(props) => props.width};
@@ -46,20 +47,20 @@ function imageRenderer({ src, ...props }) {
     />
   );
 }
-const Article = ({ article }) => {
+const Article = ({ article, slug }) => {
   const renderers = {};
   renderers["image"] = imageRenderer;
   renderers["code"] = CodeBlock;
   return (
-    <Layout>
-      <Head>
-        <title>Baha chammakhi-{article?.title}</title>
-        <meta name="description" content={article?.preview}></meta>
-        <meta
-          name="keywords"
-          content={`blogs, articles,Javascript,Code,Programming,Baha ,chammakhi, Portfolio, Projects, bahachammakhi, devops,arcitecture,tunisia,developer,nodejs,typescript,${article?.title},${article?.preview}`}
-        ></meta>
-      </Head>
+    <>
+      <SEO
+        title={`Bahachammakhi- ${article?.title}`}
+        description={article?.preview}
+        language="en-us"
+        image={article?.image?.url}
+        pageUrl={`https://www.bahachammakhi.com/articles/${slug}`}
+        keywords={article?.keywords}
+      />
       <Wrap>
         <div
           id="banner"
@@ -83,7 +84,7 @@ const Article = ({ article }) => {
           </div>
         </div>
       </Wrap>
-    </Layout>
+    </>
   );
 };
 
@@ -101,7 +102,7 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const { data } = await getArticle(params.id);
   return {
-    props: { article: data },
+    props: { article: data, slug: params.id },
     unstable_revalidate: 1,
   };
 }

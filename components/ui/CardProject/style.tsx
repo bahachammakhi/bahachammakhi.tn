@@ -206,3 +206,12 @@ export const LittleCard = styled.div<any>`
   animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
   transform: translate3d(0, 0, 0);
 `;
+
+export const CardWrapperGlobal = styled.div<any>`
+  padding-bottom: 20px;
+  padding-left: 20px;
+  @media screen and (max-width: 768px) {
+    padding-bottom: 20px;
+    padding-left: 0px;
+  }
+`;
