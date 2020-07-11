@@ -33,9 +33,7 @@ type useApiContextType = {
 };
 export const Redux = createContext<useApiContextType | undefined>(undefined);
 
-export function reportWebVitals(metric: any) {
-  console.log("metric", metric);
-}
+export function reportWebVitals(metric: any) {}
 
 const MyApp = ({ Component, pageProps }: any): any => {
   const { ...calls } = useApi({

@@ -8,7 +8,7 @@ const navlinks = (navitems: any, router: any) =>
   navitems.map((item: String) => {
     const path =
       item === "Home" ? "/" : item.charAt(0).toLowerCase() + item.substring(1);
-    console.log("item", path);
+
     return router.pathname === `/${path}` ||
       (router.pathname === "/" && item === "Home") ? (
       <NavItem

@@ -24,7 +24,7 @@ const ResponsiveHeader = ({ match, social }: any) => {
           {social.length > 0 ? (
             social?.map((element) => {
               return (
-                <a href={element?.link}>
+                <a rel="noreferrer" href={element?.link}>
                   <Logo
                     width="30px"
                     style={{ marginRight: "15px", cursor: "pointer" }}
