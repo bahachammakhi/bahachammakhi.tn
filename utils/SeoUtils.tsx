@@ -70,8 +70,6 @@ const HeadSEO = ({
       <meta name="apple-mobile-web-app-status-bar-style" content="default" />
       <meta name="apple-mobile-web-app-title" content={title} />
       <meta name="description" content={description} />
-      <meta name="robots" content="index,follow" />
-      <meta name="googlebot" content="index,follow" />
       <meta name="subject" content={description} />
       <meta name="rating" content="General" />
       <meta name="format-detection" content="telephone=no" />

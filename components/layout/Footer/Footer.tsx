@@ -19,7 +19,7 @@ export const SocialMedia = (logos: any) => {
 const Footer: any = ({ email, phone, footer, social_media, social }) => {
   return (
     <Wrapper>
-      <Logo src="/static/nobglogo.png" />
+      <Logo alt="Logo" src="/static/nobglogo.png" />
       <Writing>Living , Learning , Working</Writing>
       <Row>{SocialMedia(social)}</Row>
       <Copyrigth>{footer}</Copyrigth>
