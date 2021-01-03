@@ -16,7 +16,34 @@ const Image = styled.img`
   }
 `;
 const Wrap = styled.div`
-  padding: 5% 15% 5% 15%;
+  margin: 30%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+
+  font-family: Fira Code, monospace !important;
+  h1 {
+    color: #0f172a;
+    font-size: 2.6666667em !important;
+    line-height: 1 !important;
+    margin-bottom: 0.8333333em !important;
+  }
+  p {
+    line-height: 2rem;
+    font-size: 18px;
+  }
+  img {
+    visibility: visible;
+
+    inset: 0px;
+    box-sizing: border-box;
+    padding: 0px;
+    border: none;
+
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 100%;
+    max-height: 100%;
+  }
   @media screen and (max-width: 768px) {
     padding: 5% 5% 5% 5%;
   }
@@ -62,27 +89,15 @@ const Article = ({ article, slug }) => {
         keywords={article?.keywords}
       />
       <Wrap>
-        <div
-          id="banner"
-          className="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light uk-padding uk-margin"
-          data-src={article?.image?.url}
-          data-srcset={article?.image?.url}
-          data-uk-img
-        >
-          <h1>{article.title}</h1>
-        </div>
+        <h1>{article.title}</h1>
 
-        <div className="uk-section">
-          <div className="uk-container uk-container-small">
-            <ReactMarkdown
-              source={imagePreprocessor(article.content)}
-              renderers={renderers}
-            />
-            <h2>
-              <Moment format="MMM Do YYYY">{article.published_at}</Moment>
-            </h2>
-          </div>
-        </div>
+        <ReactMarkdown
+          source={imagePreprocessor(article.content)}
+          renderers={renderers}
+        />
+        <h2>
+          <Moment format="MMM Do YYYY">{article.published_at}</Moment>
+        </h2>
       </Wrap>
     </>
   );

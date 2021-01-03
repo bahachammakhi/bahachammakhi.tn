@@ -8,7 +8,7 @@ export default class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
-          <style global jsx>
+          <style jsx global>
             {`
               body {
                 overflow-x: hidden;

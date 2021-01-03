@@ -68,7 +68,6 @@ const MyApp = ({ Component, pageProps }: any): any => {
               rgba(227, 228, 228, 0.6895133053221288) 0%,
               rgba(255, 255, 255, 1) 98%
             );
-            font-family: "Montserrat", sans-serif;
           }
         `}
       </style>
