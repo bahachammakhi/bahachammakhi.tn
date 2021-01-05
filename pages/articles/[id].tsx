@@ -6,6 +6,8 @@ import Layout from "../../components/layout/PortfolioLayout/Layout";
 import Head from "next/head";
 import CodeBlock from "../../utils/CodeBlock";
 import SEO from "../../utils/SeoUtils";
+import React from "react";
+import MarkdownWrap from "../../components/ui/Markdown";
 
 const Image = styled.img`
   width: ${(props) => props.width};
@@ -31,6 +33,7 @@ const Wrap = styled.div`
     line-height: 2rem;
     font-size: 18px;
   }
+
   img {
     visibility: visible;
 
@@ -46,6 +49,9 @@ const Wrap = styled.div`
   }
   @media screen and (max-width: 768px) {
     padding: 5% 5% 5% 5%;
+    margin: 5%;
+    margin-top: 5%;
+    margin-bottom: 5%;
   }
 `;
 const imageSizeRegex = /_33B2BF251EFD_([0-9]+x|x[0-9]+|[0-9]+x[0-9]+)$/;
@@ -88,17 +94,18 @@ const Article = ({ article, slug }) => {
         pageUrl={`https://www.bahachammakhi.com/articles/${slug}`}
         keywords={article?.keywords}
       />
-      <Wrap>
-        <h1>{article.title}</h1>
-
-        <ReactMarkdown
-          source={imagePreprocessor(article.content)}
-          renderers={renderers}
-        />
-        <h2>
-          <Moment format="MMM Do YYYY">{article.published_at}</Moment>
-        </h2>
-      </Wrap>
+      <MarkdownWrap>
+        <div className="markdown-body">
+          <h1>{article.title}</h1>
+          <ReactMarkdown
+            source={imagePreprocessor(article.content)}
+            renderers={renderers}
+          />
+          <h2>
+            <Moment format="MMM Do YYYY">{article.published_at}</Moment>
+          </h2>
+        </div>
+      </MarkdownWrap>
     </>
   );
 };
