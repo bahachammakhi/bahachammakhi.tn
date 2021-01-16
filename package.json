@@ -15,7 +15,7 @@
     "@next/mdx": "^9.4.4",
     "@types/react-syntax-highlighter": "^11.0.4",
     "antd": "^4.3.3",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "codecov": "^3.7.0",
     "dotenv": "^8.2.0",
     "next": "9.4.4",
