@@ -78,7 +78,7 @@ const DevProccess = () => {
         {data.slice(current, current + 1).map((el, index) => {
           return <ContentText key={index}>{el.content}</ContentText>;
         })}
-        /** Needs some fixes here ! */
+        {/** Needs some fixes here ! */}
         <ButtonWrapper>
           <Button
             width="80px"
