@@ -28,6 +28,13 @@ const Wrap = styled.div`
     max-width: 100%;
     min-height: 100%;
     max-height: 100%;
+    max-width: 100vw;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
   }
   @media screen and (max-width: 768px) {
     padding: 5% 5% 5% 5%;
@@ -801,6 +808,8 @@ const MarkdownWrap = styled.div`
     max-width: 100%;
     box-sizing: initial;
     background-color: #fff;
+    width: 100vw;
+    position: relative;
   }
 
   .markdown-body img[align="right"] {
@@ -1016,6 +1025,18 @@ const MarkdownWrap = styled.div`
     margin: 5%;
     margin-top: 5%;
     margin-bottom: 5%;
+    .markdown-body img {
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+      max-width: 100vw;
+      box-sizing: initial;
+      background-color: #fff;
+      position: relative;
+    }
   }
 `;
 export default MarkdownWrap;

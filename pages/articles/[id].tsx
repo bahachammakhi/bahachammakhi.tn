@@ -82,7 +82,7 @@ function imageRenderer({ src, ...props }) {
 }
 const Article = ({ article, slug }) => {
   const renderers = {};
-  renderers["image"] = imageRenderer;
+  // renderers["image"] = imageRenderer;
   renderers["code"] = CodeBlock;
   return (
     <>
@@ -90,7 +90,7 @@ const Article = ({ article, slug }) => {
         title={`Bahachammakhi- ${article?.title}`}
         description={article?.preview}
         language="en-us"
-        image={article?.image?.url}
+        image={article?.image?.formats?.thumbnail?.url}
         pageUrl={`https://www.bahachammakhi.com/articles/${slug}`}
         keywords={article?.keywords}
       />
