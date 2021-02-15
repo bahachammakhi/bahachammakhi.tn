@@ -81,6 +81,7 @@ function imageRenderer({ src, ...props }) {
   );
 }
 const Article = ({ article, slug }) => {
+  console.log("Article", article);
   const renderers = {};
   // renderers["image"] = imageRenderer;
   renderers["code"] = CodeBlock;

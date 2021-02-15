@@ -59,6 +59,15 @@ const HeadSEO = ({
 }: any = DEFAULT_SEO) => {
   return (
     <Head>
+      <meta property="og:image" content={image} />
+      <meta property="og:image:secure" content={image} />
+      <meta property="og:image:secure_url" content={image} />
+      <meta property="og:image:url" content={image} />
+
+      <meta property="og:image:alt" content={description} />
+      <meta property="og:description" content={description} />
+      <meta property="og:site_name" content={title} />
+      <meta property="og:locale" content={language} />
       <meta
         name="viewport"
         content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=yes, viewport-fit=cover"
@@ -122,15 +131,6 @@ const HeadSEO = ({
       <meta property="og:url" content={pageUrl} />
       <meta property="og:type" content="website" />
       <meta property="og:title" content={title} />
-      <meta property="og:image" content={image} />
-      <meta property="og:image:secure" content={image} />
-      <meta property="og:image:secure_url" content={image} />
-      <meta property="og:image:url" content={image} />
-
-      <meta property="og:image:alt" content={description} />
-      <meta property="og:description" content={description} />
-      <meta property="og:site_name" content={title} />
-      <meta property="og:locale" content={language} />
       <meta
         property="article:author"
         content="Baha eddine chammakhi"
