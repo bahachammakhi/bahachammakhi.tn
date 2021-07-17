@@ -8,6 +8,12 @@ interface Props {
 }
 
 const NavItem = ({ path, content, activated }: Props) => {
+  if(content === "Articles") return <a style={{
+          textDecoration: "none",
+          color: activated ? "black" : "gray",
+          marginLeft: "60px",
+          cursor: "pointer",
+        }} href="blog.bahachammakhi.tn" target="_self">Articles</a>
   return (
     <Link href={path}>
       <p
