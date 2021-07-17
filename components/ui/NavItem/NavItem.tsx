@@ -13,7 +13,7 @@ const NavItem = ({ path, content, activated }: Props) => {
           color: activated ? "black" : "gray",
           marginLeft: "60px",
           cursor: "pointer",
-        }} href="blog.bahachammakhi.tn" target="_self">Articles</a>
+        }} href="https://blog.bahachammakhi.tn" target="_self">Articles</a>
   return (
     <Link href={path}>
       <p
